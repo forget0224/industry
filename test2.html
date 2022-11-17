@@ -31,23 +31,27 @@
             background-color: #4179f7;
             color: #fff;
         }
-        
+        .abs{position: absolute;
+            bottom:100px;
+        }
+        .content{width: 100%;
+        }
     </style>
 </head>
 
-<body>
+<body>  
 
-    <div class="header flex float-right mt-16 mr-16 fixed">
-        <button class="a bg-gray-200 h-12 w-24  mr-5 it">1</button>
-        <button class="b bg-gray-300 h-12 w-24  mr-5 it">2</button>
-        <button class="c bg-gray-400 h-12 w-24  mr-5 it">3</button>
-        <button class="d bg-gray-500 h-12 w-24  mr-5 it">4</button>
-        <button class="bigBtn  bg-gray-700  h-12 w-32 it">5</button>
+    <div class="header flex float-right mt-16 mr-16 ">
+        <div class="a bg-gray-200 h-12 w-24  mr-5 ">1</div>
+        <div class="b bg-gray-300 h-12 w-24  mr-5 ">2</div>
+        <div class="c bg-gray-400 h-12 w-24  mr-5 ">3</div>
+        <div class="d bg-gray-500 h-12 w-24  mr-5 ">4</div>
+        <div class="bigBtn  bg-gray-700  h-12 w-32 ">5</div>
     </div>
 
     <section id="1" class="bg-gray-100 min-h-screen scroll_element ">
         <div class="block w-full mr-auto text-center  ">
-            <div class="content  w-full  fixed">
+            <div class="content">
                 <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
             </div>
         </div>
@@ -131,104 +135,30 @@
 
 
 
+  
     <script>
-        // window.addEventListener("scroll", function showSec() {
-
-
-
-        //     var sections = document.getElementsByTagName("section");
-        //     var blocks = document.getElementsByClassName("block");
-        //     const scrollTop = sections.scrollTop
-        //     const secHeight = sections.Height
-
-
-        //     for (var i = 0; i < sections.length; i++) {
-        //         if (sections[i].scrollTop) {
-        //             blocks[i].style.display = "none";
-        //         } else {
-        //             blocks[i].style.display = "block";
-        //         }
-        //     }
-
-        // });
-
-
-
-
-        // showSec()
-
-
-
-        //         var doc = window.document,
-        //   context = doc.querySelector('.js-loop'),
-        //   clones = context.querySelectorAll('.is-clone'),
-        //   disableScroll = false,
-        //   scrollHeight = 0,
-        //   scrollPos = 0,
-        //   clonesHeight = 0,
-        //   i = 0;
-
-        // function getScrollPos () {
-        //   return (context.pageYOffset || context.scrollTop) - (context.clientTop || 0);
-        // }
-
-        // function setScrollPos (pos) {
-        //   context.scrollTop = pos;
-        // }
-
-        // function getClonesHeight () {
-        //   clonesHeight = 0;
-
-        //   for (i = 0; i < clones.length; i += 1) {
-        //     clonesHeight = clonesHeight + clones[i].offsetHeight;
-        //   }
-
-        //   return clonesHeight;
-        // }
-
-
-
-        // function init () {
-        //   reCalc();
-
-        //   context.addEventListener('scroll', function () {
-        //     window.requestAnimationFrame(scrollUpdate);
-        //   }, false);
-
-        //   window.addEventListener('resize', function () {
-        //     window.requestAnimationFrame(reCalc);
-        //   }, false);
-        // }
-
-        // if (document.readyState !== 'loading') {
-        //   init()
-        // } else {
-        //   doc.addEventListener('DOMContentLoaded', init, false)
-        // }
-    </script>
-    <script>
-        var newPos = undefined
-        var myReq = undefined
+       
         var nav = document.querySelector('.header')
 
-
-        var navList = document.querySelectorAll('button')
+        var navList = document.querySelectorAll('.content')
         var ses = document.getElementsByTagName('section')
-        var ct = document.querySelectorAll
+        
 
 
         window.addEventListener('scroll', function () {
             var scrollTop = document.documentElement.scrollTop
 
             Array.from(ses).forEach(function (item, index) {
-                navList[index].className='bg-gray-200 h-12 w-24  mr-5'   //預設classname (清空)
+                navList[index].className = 'item'   //預設classname (清空)
                 if (scrollTop >= item.offsetTop && scrollTop < item.offsetTop + item.clientHeight) {
                 
-                    navList[index].classList.add("active")
+                    navList[index].classList.remove("abs")
+                    navList[index].classList.add("fixed")
 
                 }
                 if (scrollTop <= ses[0].offsetTop) {
-                    navList[0].classList.add("active")
+                    navList[0].classList.add("fixed")
+                    navList[index].classList.remove("abs")
                 }
               
             })
