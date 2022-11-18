@@ -32,7 +32,7 @@
             color: #fff;
         }
         .abs{position: absolute;
-            bottom:100px;
+            bottom:30px;
         }
         .content{width: 100%;
         }
@@ -51,7 +51,7 @@
 
     <section id="1" class="bg-gray-100 min-h-screen scroll_element ">
         <div class="block w-full mr-auto text-center  ">
-            <div class="content">
+            <div class="content ">
                 <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
             </div>
         </div>
@@ -60,49 +60,48 @@
     </section>
 
 
-
-    <section id="2" class="bg-gray-200 min-h-screen scroll_element ">
+    <section id="2" class="bg-gray-200 min-h-screen scroll_element " style="height: 1500px;">
         <div class="block w-full mr-auto text-center  ">
-            <div class="content  w-full ">
+            <div class="content ">
                 <img src="./images/package1.png" class="h-1/6 w-1/6 inline-block" alt="">
             </div>
         </div>
 
     </section>
-    <section id="3" class="bg-gray-300 min-h-screen scroll_element">
-        <!-- <div class="block w-full mr-auto text-center  ">
+    <!-- <section id="3" class="bg-gray-300 min-h-screen scroll_element">
+        <div class="block w-full mr-auto text-center  ">
             <div class="content  w-full fixed">
                 <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
             </div>
-        </div> -->
+        </div>
     </section>
     <section id="4" class="bg-gray-400 min-h-screen">
-        <!-- <div class="block w-full mr-auto text-center  ">
+        <div class="block w-full mr-auto text-center  ">
             <div class="content  w-full fixed">
                 <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
             </div>
-        </div> -->
+        </div>
     </section>
     <section id="5" class="bg-gray-500 min-h-screen">
-        <!-- <div class="block w-full mr-auto text-center  ">
+        <div class="block w-full mr-auto text-center  ">
             <div class="content  w-full fixed">
                 <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
             </div>
-        </div> -->
+        </div>
     </section>
     <section id="6" class="bg-gray-600 min-h-screen">
-        <!-- <div class="block w-full mr-auto text-center  ">
+        <div class="block w-full mr-auto text-center  ">
             <div class="content  w-full fixed">
                 <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
             </div>
-        </div> -->
+        </div>
     </section>
     <section id="7" class="bg-gray-700 min-h-screen">
-        <!-- <div class="block w-full mr-auto text-center  ">
+        <div class="block w-full mr-auto text-center  ">
             <div class="content  w-full fixed">
                 <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
             </div>
-        </div> -->
+        </div>
     </section>
     <section id="8" class="bg-gray-800 min-h-screen">
         <div class="block w-full mr-auto text-center  ">
@@ -112,54 +111,62 @@
         </div>
     </section>
     <section id="9" class="bg-gray-900 min-h-screen">
-        <!-- <div class="block w-full mr-auto text-center  ">
+        <div class="block w-full mr-auto text-center  ">
             <div class="content  w-full fixed">
                 <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
             </div>
-        </div> -->
+        </div>
     </section>
     <section id="10" class="bg-gray-300 min-h-screen">
-        <!-- <div class="block w-full mr-auto text-center  ">
+        <div class="block w-full mr-auto text-center  ">
             <div class="content  w-full fixed">
                 <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
             </div>
-        </div> -->
+        </div>
     </section>
     <section id="11" class="bg-gray-600 min-h-screen">
-        <!-- <div class="block w-full mr-auto text-center  ">
+        <div class="block w-full mr-auto text-center  ">
             <div class="content  w-full fixed">
                 <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
             </div>
-        </div> -->
-    </section>
+        </div>
+    </section> -->
 
 
 
   
     <script>
-       
-        var nav = document.querySelector('.header')
+     
 
+        var nav = document.querySelector('.header')
         var navList = document.querySelectorAll('.content')
         var ses = document.getElementsByTagName('section')
-        
+        var ct = document.querySelectorAll
 
 
         window.addEventListener('scroll', function () {
             var scrollTop = document.documentElement.scrollTop
+            var offH = document.documentElement.offsetHeight
 
             Array.from(ses).forEach(function (item, index) {
-                navList[index].className = 'item'   //預設classname (清空)
-                if (scrollTop >= item.offsetTop && scrollTop < item.offsetTop + item.clientHeight) {
+                console.log('scrollTop'+scrollTop)
                 
+                console.log('item.clientHeight'+item.clientHeight )
+                // if(navList[index].classList.contains('fixed')){navList[index].classList.remove("fixed")}   
+                if (scrollTop > item.clientHeight/2 -20) {
+                // console.log(scrollTop)
+                // console.log(item.offsetTop)
+                // console.log(item.clientHeight )
+
+                    navList[index].classList.remove("fixed")
+                    navList[index].classList.add("abs")
+//正在作用的
+                }else if(scrollTop<=item.clientHeight+item.offsetTop){
                     navList[index].classList.remove("abs")
                     navList[index].classList.add("fixed")
 
                 }
-                if (scrollTop <= ses[0].offsetTop) {
-                    navList[0].classList.add("fixed")
-                    navList[index].classList.remove("abs")
-                }
+              
               
             })
         })

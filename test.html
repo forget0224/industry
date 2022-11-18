@@ -38,11 +38,11 @@
 <body>
 
     <div class="header flex float-right mt-16 mr-16 fixed">
-        <button class="a bg-gray-200 h-12 w-24  mr-5 it">1</button>
-        <button class="b bg-gray-300 h-12 w-24  mr-5 it">2</button>
-        <button class="c bg-gray-400 h-12 w-24  mr-5 it">3</button>
-        <button class="d bg-gray-500 h-12 w-24  mr-5 it">4</button>
-        <button class="bigBtn  bg-gray-700  h-12 w-32 it">5</button>
+        <button class="a bg-gray-200 h-12 w-24  mr-5 active">1</button>
+        <button class="b bg-gray-300 h-12 w-24  mr-5 ">2</button>
+        <button class="c bg-gray-400 h-12 w-24  mr-5 ">3</button>
+        <button class="d bg-gray-500 h-12 w-24  mr-5 ">4</button>
+        <button class="bigBtn  bg-gray-700  h-12 w-32 ">5</button>
     </div>
 
     <section id="1" class="bg-gray-100 min-h-screen scroll_element ">
@@ -207,11 +207,8 @@
         // }
     </script>
     <script>
-        var newPos = undefined
-        var myReq = undefined
+        
         var nav = document.querySelector('.header')
-
-
         var navList = document.querySelectorAll('button')
         var ses = document.getElementsByTagName('section')
         var ct = document.querySelectorAll
@@ -221,15 +218,17 @@
             var scrollTop = document.documentElement.scrollTop
 
             Array.from(ses).forEach(function (item, index) {
-                navList[index].className='bg-gray-200 h-12 w-24  mr-5'   //預設classname (清空)
+                // navList[index].setAttribute=('class','bg-gray-200 h-12 w-24 mr-5')  
+                if(navList[index].classList.contains('active')){navList[index].classList.remove("active")}   
                 if (scrollTop >= item.offsetTop && scrollTop < item.offsetTop + item.clientHeight) {
                 
                     navList[index].classList.add("active")
 
                 }
-                if (scrollTop <= ses[0].offsetTop) {
-                    navList[0].classList.add("active")
-                }
+                // if (scrollTop <= ses[0].offsetTop) {
+                //     navList[0].classList.add("active")
+                // }
+                // if(navList.classList.contains('active')){navList.classList.remove("active")}
               
             })
         })
