@@ -24,7 +24,7 @@
         }
 
         section {
-            height: 1500px;
+            height: 2000px;
         }
 
         .active {
@@ -60,7 +60,7 @@
             background-position: center;
             background-size: 320px 470px;
             opacity: 1;
-            transform: translateY(-254px);
+            /* transform: translateY(-254px); */
         }
 
         .bg3 {
@@ -106,7 +106,7 @@
     </section>
 
 
-    <section id="2" class="bg-gray-200 min-h-screen scroll_element " style="height: 1500px;">
+    <section id="2" class="bg-gray-200 min-h-screen scroll_element ">
         <div class="block w-full  text-center   ">
             <div class="content bg2 sticky">
                 <!-- <img src=""  alt=""> -->
@@ -314,56 +314,59 @@
 
         timeline.to('.bg1', {
                 opacity: 0,
-                delay:0.5,
                 duration: 1,
-                y: 500,
-                // onUpdate: function () {
-                //     gsap.from('.bg2', 1, {
-                //         opacity: 0,
-                //         y: -500,
-                //     })
-                // }
+                y:300
 
             })
-            .from('.bg2', {
-                // opacity: 0,
-                // delay:0.5,
-                duration:0.5,
-                y: 200,
-            },)
-            // .from('.bg2', 1, {
-            //     opacity: 0,
-            //     y: 430,
-            // },"-=0.5")
+            .fromTo('.bg2', {
+                opacity: 0,
+                y:200,
+               
+            }, {
+                opacity: 1,
+                
+               y:-200,
+            }, "-=1")
             // .to('.bg2', {
-            //     opacity: 0,
-            //     duration: 1,
-            //     y: -200,
-            // })
-            // .from('.bg3', {
-            //     opacity: 0,
-            //     duration: 1,
-            //     y: -500,
-            // })
-            // .to('.bg3', {
-            //     opacity: 0,
-            //     duration: 1,
-            //     y: 200,
 
-            // })
-
-            // .from('.bg4', {
-            //     opacity: 0,
-            //     duration: 1,
-            //     y: -800,
-            // })
+            // }, )
 
 
-            // .to('.bg4', {
-            //     opacity: 0,
-            //     duration: 1,
-            //     y: 200,
-            // })
+
+
+        // .from('.bg2', 1, {
+        //     opacity: 0,
+        //     y: 430,
+        // },"-=0.5")
+        // .to('.bg2', {
+        //     opacity: 0,
+        //     duration: 1,
+        //     y: -200,
+        // })
+        // .from('.bg3', {
+        //     opacity: 0,
+        //     duration: 1,
+        //     y: -500,
+        // })
+        // .to('.bg3', {
+        //     opacity: 0,
+        //     duration: 1,
+        //     y: 200,
+
+        // })
+
+        // .from('.bg4', {
+        //     opacity: 0,
+        //     duration: 1,
+        //     y: -800,
+        // })
+
+
+        // .to('.bg4', {
+        //     opacity: 0,
+        //     duration: 1,
+        //     y: 200,
+        // })
 
 
         timeline.pause()
@@ -372,14 +375,26 @@
 
 
 
-        window.addEventListener("scroll", function () {
-            const scrollTop = document.documentElement.scrollTop
-            const docHeight = document.documentElement.scrollHeight
-            const winHeight = window.innerHeight
 
-            const scrollPercent = scrollTop / (docHeight)
-            timeline.progress(scrollPercent)
 
+
+
+
+        $(window).scroll(function () {
+
+            $("section .content").each(function (index) {
+                var threshold = 50
+                const scrollTop = document.documentElement.scrollTop
+                const docHeight = document.documentElement.scrollHeight
+                const winHeight = window.innerHeight
+                const scrollPercent = scrollTop / (docHeight)
+
+                if ($(window).scrollTop() >= $(this).height()) {
+
+                    timeline.progress(scrollPercent)
+                }
+
+            });
         });
     </script>
 

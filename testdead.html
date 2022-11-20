@@ -60,7 +60,7 @@
             background-position: center;
             background-size: 320px 470px;
             opacity: 1;
-            transform: translateY(-254px);
+            /* transform: translateY(-254px); */
         }
 
         .bg3 {
@@ -181,119 +181,7 @@
 
 
 
-    <script>
-        // var nav = document.querySelector('.header')
-        // var navList = document.querySelectorAll('.content')
-        // var ses = document.getElementsByTagName('section')
-        // var ct = document.querySelectorAll
 
-
-        // window.addEventListener('scroll', function () {
-        //     var scrollTop = document.documentElement.scrollTop
-        //     var offH = document.documentElement.offsetHeight
-        //     var offT = document.documentElement.offsetTop
-
-
-        //     Array.from(ses).forEach(function (item, index) {
-
-        //         console.log('scrollTop' + scrollTop)
-        //         console.log('item.clientHeight' + item.clientHeight)
-        //         console.log('item.offsetTop' + item.offT)
-
-
-        //         if (scrollTop >= item.clientHeight + item.offsetTop) {
-
-
-
-
-        //             navList[index].classList.remove("fixed")
-        //             navList[index].classList.add("abs")
-
-
-        //         } else if (scrollTop <= item.clientHeight + item.offsetTop) {
-        //             navList[index].classList.add("fixed")
-        //             navList[index].classList.remove("abs")
-
-        //         }
-
-
-        //     })
-        // })
-    </script>
-
-    <script>
-        // if ($(window).scrollTop() >= check)
-        //     $('#sidebar').addClass('bottom');
-        // else
-        //     $('#sidebar').removeClass('bottom');
-
-
-
-
-        // $(window).scroll(function () {
-
-        //     $("section .content").each(function (index) {
-        //         var threshold = 50
-
-        //         if ($(window).scrollTop() >=$(this).height() ) {
-        //             $(this).removeClass('fixed');
-        //             $(this).addClass('abs');
-        //             $(this).eq(1).next().addClass('fixed');
-        //         } else {
-        //            $(this).addClass('fixed');
-        //            $(this).removeClass('abs');
-        //         }
-        //         var check = $(".1").height() - $(".content").height();
-        //         if ($(window).scrollTop() >= check) {
-        //             $(this).removeClass('fixed');
-        //             $(this).addClass('abs');
-        //         } else {
-        //             $(this).removeClass('abs');
-        //         }
-        //     });
-        // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // var navList = document.querySelectorAll('.content')
-        // var ses = document.getElementsByTagName('section')
-
-
-        // window.addEventListener('scroll', function () {
-        //     var scrollTop = document.documentElement.scrollTop
-
-        //     Array.from(ses).forEach(function (item, index) {
-
-
-        //         if (scrollTop >= item.clientHeight + item.offsetTop) {
-
-
-
-
-        //             navList[index].classList.remove("fixed")
-        //             navList[index].classList.add("abs")
-
-
-        //         } else if (scrollTop <= item.clientHeight + item.offsetTop) {
-        //             navList[index].classList.add("fixed")
-        //             navList[index].classList.remove("abs")
-
-        //         }
-
-
-        //     })
-        // })
-    </script>
 
 
     <script>
@@ -310,77 +198,102 @@
 
 
 
-        const timeline = gsap.timeline()
+        // const timeline = gsap.timeline()
 
-        timeline.to('.bg1', {
-                opacity: 0,
-                delay:0.5,
-                duration: 1,
-                y: 500,
-                // onUpdate: function () {
-                //     gsap.from('.bg2', 1, {
-                //         opacity: 0,
-                //         y: -500,
-                //     })
-                // }
+        // timeline.to('.bg1', {
+        //         opacity: 0,
+        //         delay:0.5,
+        //         duration: 1,
+        //         y: 500,
+        // onUpdate: function () {
+        //     gsap.from('.bg2', 1, {
+        //         opacity: 0,
+        //         y: -500,
+        //     })
+        // }
 
-            })
-            .from('.bg2', {
-                // opacity: 0,
-                // delay:0.5,
-                duration:0.5,
-                y: 200,
-            },)
-            // .from('.bg2', 1, {
-            //     opacity: 0,
-            //     y: 430,
-            // },"-=0.5")
-            // .to('.bg2', {
-            //     opacity: 0,
-            //     duration: 1,
-            //     y: -200,
-            // })
-            // .from('.bg3', {
-            //     opacity: 0,
-            //     duration: 1,
-            //     y: -500,
-            // })
-            // .to('.bg3', {
-            //     opacity: 0,
-            //     duration: 1,
-            //     y: 200,
+        // })
+        // .from('.bg2', {
+        // opacity: 0,
+        // delay:0.5,
+        //     duration:0.5,
+        //     y: 200,
+        // },)
+        // .from('.bg2', 1, {
+        //     opacity: 0,
+        //     y: 430,
+        // },"-=0.5")
+        // .to('.bg2', {
+        //     opacity: 0,
+        //     duration: 1,
+        //     y: -200,
+        // })
+        // .from('.bg3', {
+        //     opacity: 0,
+        //     duration: 1,
+        //     y: -500,
+        // })
+        // .to('.bg3', {
+        //     opacity: 0,
+        //     duration: 1,
+        //     y: 200,
 
-            // })
+        // })
 
-            // .from('.bg4', {
-            //     opacity: 0,
-            //     duration: 1,
-            //     y: -800,
-            // })
-
-
-            // .to('.bg4', {
-            //     opacity: 0,
-            //     duration: 1,
-            //     y: 200,
-            // })
+        // .from('.bg4', {
+        //     opacity: 0,
+        //     duration: 1,
+        //     y: -800,
+        // })
 
 
-        timeline.pause()
+        // .to('.bg4', {
+        //     opacity: 0,
+        //     duration: 1,
+        //     y: 200,
+        // })
 
 
+        // timeline.pause()
 
 
 
-        window.addEventListener("scroll", function () {
-            const scrollTop = document.documentElement.scrollTop
-            const docHeight = document.documentElement.scrollHeight
-            const winHeight = window.innerHeight
 
-            const scrollPercent = scrollTop / (docHeight)
-            timeline.progress(scrollPercent)
+
+        window.addEventListener("scroll", function (e) {
+            var scrollTop = window.pageYOffset
+e=e||window.event
+
+            var tl = gsap.timeline()
+
+            if (scrollTop = 1000 ) {
+e.stopPropagation();
+                tl.to('.bg1', {
+                        opacity: 0,
+                        delay: 0.5,
+                        duration: 1,
+                        y: 500,
+                    })
+                    .fromTo('.bg2', {
+                        opacity: 0,
+                        y: 200,
+
+                    }, {
+                        opacity: 1,
+                        duration: 0.5,
+                        y: -200,
+                    }, "-=1")
+
+            }
+
+
+
+
+
+
 
         });
+        // tl.pause()
     </script>
 
 
