@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+
+    <!-- <style>
+        .block {
+            max-width: 100%;
+            height: 100%;
+            /* padding: 180px 0; */
+            position: relative;
+            font-size: 0;
+            line-height: 0;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        section {
+            height: 2000px;
+        }
+
+        .active {
+            border-top: 1px solid green;
+            background-color: #4179f7;
+            color: #fff;
+        }
+
+        .abs {
+            position: absolute;
+            bottom: 30px;
+        }
+
+        .content {
+            width: 100%;
+            height: 500px;
+
+            position: absolute;
+            top: 130%
+        }
+
+        .bg1 {
+            background: url('./images/sheet1.png');
+            background-repeat: no-repeat;
+            background-size: 320px 470px;
+            background-position: center;
+
+        }
+
+
+
+        .bg2 {
+            background: url('./images/package1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            opacity: 0;
+        }
+
+        .bg3 {
+            background: url('./images/ogline1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+
+        }
+
+        .bg4 {
+            background: url('./images/wline1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+        }
+
+
+
+        .fixed {
+            position: fixed;
+            top: 20%;
+            transition: 0.8s;
+            opacity: 1;
+        }
+    </style> -->
+    <style>
+        body {
+            margin: 0;
+        }
+
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: salmon;
+        }
+
+        .panel {
+            height: 100vh;
+            background-color: pink;
+        }
+
+        .red{background-color: red;}
+    </style>
+
+
+</head>
+
+<body>
+    <div class="panel"></div>
+    <div class="box"></div>
+    <div class="panel"></div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+// 1)-------------------------------scroll~timeline
+        // const tl = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".box",
+        //         markers: true,
+        //         start: "top 80%",
+        //         end: "top 30%",
+        //         scrub: 1,
+        //     }
+        // });
+        // tl.to(".box", {
+        //         x: 500,
+        //         duration: 5
+        //     })
+        //     .to(".box", {
+        //         y: 200,
+        //         duration: 3
+        //     })
+        //     .to(".box", {
+        //         x: 0,
+        //         duration: 2
+        //     })
+
+
+
+        // 2)--------stand alone
+        ScrollTrigger.create({
+            trigger:".box",
+            start:"top 80%",
+            end:"top 50%",
+            markers:true,
+            toggleClass:"red",
+            onEnter:()=>console.log("enter!"),
+            onLeave:()=>console.log("leave!"),
+            onEnterBack:()=>console.log("enter!"),
+            onLeaveBack:()=>console.log("leave!"),
+           onUpdate:(self)=>console.log(self)
+             
+        })
+    </script>
+</body>
+
+</html>
