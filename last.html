@@ -12,36 +12,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 
     <style>
-        .block {
-            max-width: 100%;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
             height: 100%;
-            /* padding: 180px 0; */
-            position: relative;
-            font-size: 0;
-            line-height: 0;
+            width: 100%;
+            /* background-color:rgba(254, 74, 38, 1) ; */
+        }
+
+        .block {
+            width: 100%;
+            height: 100%;
             text-align: center;
             margin: 0 auto;
         }
 
         section {
             height: 2000px;
+            scroll-snap-align: start;
+            width: auto;
+            /* height: 100%; */
+            text-align: center;
+            margin: 0 auto;
+            background: url('./images/visual2.jpg');
+            background-attachment: fixed;
+            background-size: auto 100%;
+            background-position: center;
         }
 
-        .active {
-            border-top: 1px solid green;
-            background-color: #4179f7;
-            color: #fff;
-        }
-
-        .abs {
-            position: absolute;
-            bottom: 30px;
-        }
 
         .content {
             width: 100%;
             height: 500px;
-
             position: absolute;
             top: 10%
         }
@@ -51,7 +57,7 @@
             background-repeat: no-repeat;
             background-size: 320px 470px;
             background-position: center;
-
+            z-index: 9;
         }
 
 
@@ -61,7 +67,7 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: 320px 470px;
-            /* opacity: 0; */
+            z-index: 9;
         }
 
         .bg3 {
@@ -69,7 +75,7 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: 320px 470px;
-
+            z-index: 9;
         }
 
         .bg4 {
@@ -77,6 +83,7 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: 320px 470px;
+            z-index: 9;
         }
 
 
@@ -84,7 +91,103 @@
         .fixed {
             position: fixed;
             top: 20%;
-            /* opacity: 0; */
+        }
+
+
+
+        .bgw {
+            background-color: white;
+        }
+
+        .bgo {
+            background-color: rgba(254, 74, 38, 1);
+        }
+
+        .block1 {
+            width: auto;
+            height: 100%;
+            text-align: center;
+            margin: 0 auto;
+            background: url('./images/visual2.jpg');
+            background-attachment: fixed;
+            background-size: auto 100%;
+            background-position: center;
+            /* background-repeat: repeat-x; */
+            /* animation: back_on1 60s linear infinite */
+        }
+
+        .block2 {
+            height: 100%;
+            /* background-color: rgba(254, 74, 38, 1); */
+        }
+
+        .block3 {
+            height: 100%;
+            /* background-color: #fff; */
+        }
+
+        @keyframes back_on1 {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-20%)
+            }
+        }
+
+        .block4 {
+            height: 100%;
+            /* background-color: rgba(255, 232, 228, 1) */
+        }
+
+        .bgb {
+            background-color: rgba(255, 232, 228, 1)
+        }
+
+        .frame_on {
+            animation: frame_on1 1s cubic-bezier(.87, 0, .13, 1) forwards
+        }
+
+        /* @keyframes frame_on1 {
+            0% {
+                opacity: 0;
+                transform: translateY(50%)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        } */
+
+
+
+
+        .frame_off {
+            animation: frame_off1 1s cubic-bezier(.87, 0, .13, 1) forwards
+        }
+
+        /* 
+        @keyframes frame_off1 {
+            0% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(50%)
+            }
+        } */
+
+
+        .box {
+            height: 100%;
+
+            /* overflow-y: scroll; */
+            /* 在父容器上面使用 scroll-snap-type 属性 */
+            /* scroll-snap-type: y mandatory; */
         }
     </style>
 </head>
@@ -99,40 +202,47 @@
         <div class="bigBtn  bg-gray-700  h-12 w-32 ">5</div>
     </div>
 
-    <section id="1" class="bg-gray-100 min-h-screen scroll_element  sec1" style="">
-        <div class="block w-full  text-center   ">
+
+    <div class="box">
+
+
+
+        <section id="1" class=" min-h-screen scroll_element  sec1" style="">
+            <div class="block w-full  text-center   ">
+                <div class="block1"></div>
+            </div>
             <div class="content bg1 fixed">
                 <!-- <img src=""  alt=""> -->
             </div>
-        </div>
+
+        </section>
 
 
-    </section>
+        <section id="2" class=" min-h-screen scroll_element sec2">
+            <div class="block w-full  text-center   ">
+                <div class="block2"></div>
+            </div>
+            <div class="content bg2 fixed">
+            </div>
 
-
-    <section id="2" class="bg-gray-200 min-h-screen scroll_element sec2">
-        <div class="block w-full  text-center   ">
-            <div class="content bg2 ">
+        </section>
+        <section id="3" class=" min-h-screen scroll_element sec3">
+            <div class="block w-full  text-center   ">
+                <div class="block3"></div>
+            </div>
+            <div class="content bg3 fixed">
                 <!-- <img src=""  alt=""> -->
             </div>
-        </div>
-
-    </section>
-    <section id="3" class="bg-gray-300 min-h-screen scroll_element sec3">
-        <div class="block w-full  text-center   ">
-            <div class="content bg3 ">
+        </section>
+        <section id="4" class=" min-h-screen scroll_element sec4">
+            <div class="block w-full  text-center ">
+                <div class="block4"></div>
+            </div>
+            <div class="content bg4 fixed">
                 <!-- <img src=""  alt=""> -->
             </div>
-        </div>
-    </section>
-    <section id="4" class="bg-gray-400 min-h-screen scroll_element sec4">
-        <div class="block w-full  text-center   fixed">
-            <div class="content bg4 ">
-                <!-- <img src=""  alt=""> -->
-            </div>
-        </div>
-    </section>
-
+        </section>
+    </div>
 
 
 
@@ -143,17 +253,19 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        //get down
+        //get down---------------------------------------------------------
         gsap.to(".bg1", {
             y: 350,
             opacity: 0,
             duration: 1,
+            ease: Power4.easeInOut,
+            // ease: CustomEase.create("custom", "M0,0 C0.69,-0.02 1,0.4 1,1"),
             scrollTrigger: {
                 trigger: ".sec1",
                 start: "bottom center",
                 markers: true,
                 scrub: true,
-
+                // toggleClass:{targets:".block1",className: "frame_off",targets:".block2",className: "frame_on"}
             },
 
         })
@@ -163,6 +275,7 @@
             y: 350,
             opacity: 0,
             duration: 1,
+            ease: Power4.easeInOut,
             scrollTrigger: {
                 trigger: ".sec2",
                 start: "bottom center",
@@ -174,6 +287,7 @@
             y: 350,
             opacity: 0,
             duration: 1,
+            ease: Power4.easeInOut,
             scrollTrigger: {
                 trigger: ".sec3",
                 start: "bottom center",
@@ -185,6 +299,7 @@
             y: 350,
             opacity: 0,
             duration: 1,
+            ease: Power4.easeInOut,
             scrollTrigger: {
                 trigger: ".sec4",
                 start: "bottom center",
@@ -196,55 +311,200 @@
 
 
 
-        // get up
+        // get up---------------------------------
         gsap.from(".bg2", {
-            y:100,
+            y: 400,
             opacity: 0,
-            duration: 0.5,
+            duration: 1,
+            ease: Power4.easeInOut,
             scrollTrigger: {
-                trigger: ".sec2",
-                start: "top center",
+                trigger: ".sec1",
+                start: "bottom center",
                 markers: true,
                 scrub: true,
-                toggleClass:{targets:".bg2",className:"fixed"}
-
             },
+            onComplete: () => {
+          gsap.to(logoTextAfter, {
+            duration: 1,
+            transform: 'scale(1)',
+            ease: Power4.easeOut
+          })
+         
+        }
+
         })
 
 
 
         gsap.from(".bg3", {
-            
+            y: 400,
             opacity: 0,
-            duration: 0.5,
+            duration: 1,
+            ease: Power4.easeInOut,
             scrollTrigger: {
-                trigger: ".sec3",
-                start: "top center",
+                trigger: ".sec2",
+                start: "bottom center",
                 markers: true,
                 scrub: true,
-                toggleClass:{targets:".bg3",className:"fixed"}
 
-            },
-        })
+            }
+
+        }, )
 
         gsap.from(".bg4", {
-            
+            y: 400,
             opacity: 0,
-            duration: 0.5,
+            duration: 1,
+            ease: Power4.easeInOut,
             scrollTrigger: {
-                trigger: ".sec4",
-                start: "top center",
+                trigger: ".sec3",
+                start: "bottom center",
                 markers: true,
                 scrub: true,
-                toggleClass:{targets:".bg4",className:"fixed"}
 
-            },
-        })
+            }
+
+        }, )
+
+
+
+        //cg bg   
+        // gsap.to(".block1", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec1",
+        //         start: "bottom center",
+        //         markers: true,
+        //         scrub: true,
+        //         // toggleClass:{targets:".sec1",className: "frame_off",targets:".sec2",className: "frame_on"}
+        //     },
+
+        // })
+
+
+
+
+        // gsap.from(".block2", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec1",
+        //         start: "bottom center",
+        //         toggleClass: {
+        //             targets: ".box",
+        //             className: "bgo",
+        //         },
+        //         markers: true,
+        //         scrub: true,
+
+        //     },
+
+        // })
+
+
+        // gsap.to(".block2", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec2",
+        //         start: "bottom center",
+        //         // toggleClass: "bgo",
+        //         markers: true,
+        //         scrub: true,
+
+        //     },
+
+        // })
+
+
+
+
+        // gsap.from(".block3", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec2",
+        //         start: "bottom center",
+        //         // toggleClass: "bgw",
+        //         markers: true,
+        //         scrub: true,
+        //         // toggleClass: "frame_on",
+        //     },
+
+        // })
+
+
+        // gsap.to(".block3", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec3",
+        //         start: "bottom center",
+        //         // toggleClass: "bgo",
+        //         markers: true,
+        //         scrub: true,
+
+        //     },
+
+        // })
+
+        // gsap.from(".block4", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec3",
+        //         start: "bottom center",
+        //         // toggleClass: "bgb",
+        //         markers: true,
+        //         scrub: true,
+        //         // toggleClass: "frame_on",
+        //     },
+
+        // })
+
+        // gsap.to(".block4", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec4",
+        //         start: "bottom center",
+        //         // toggleClass: "bgo",
+        //         markers: true,
+        //         scrub: true,
+
+        //     },
+
+        // })
+
+
+
+
+
+
+
+
+
+        // let boxes = document.querySelectorAll("section");
+
+        // window.addEventListener("scroll", checkBoxes);
+        // checkBoxes();
+
+        // function checkBoxes() {
+
+        //     boxes.forEach((box,index) => {
+        //         let boxBottom = box.getBoundingClientRect().bottom;
+        //         let boxTop = box.getBoundingClientRect().top;
+
+        //       if(boxBottom=0){
+
+        //         box[index + 1].style.backgroundColor="rgba(254, 74, 38, 1)"
+        //       }
+
+                
+        //     });
+        // }
     </script>
-
-
-
-
 
 
 
