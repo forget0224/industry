@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background: url('./images/visual2.jpg');
+            background-attachment: fixed;
+            background-size: auto 100%;
+            background-position: center;
+        }
+
+        .block {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        section {
+            height: 2000px;
+            scroll-snap-align: start;
+            width: auto;
+            /* height: 100%; */
+            text-align: center;
+            margin: 0 auto;
+            /* background: url('./images/visual2.jpg'); */
+            background-attachment: fixed;
+            background-size: auto 100%;
+            background-position: center;
+        }
+
+
+        .content {
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            top: 10%
+        }
+
+        .bg1 {
+            background: url('./images/sheet1.png');
+            background-repeat: no-repeat;
+            background-size: 320px 470px;
+            background-position: center;
+            z-index: 9;
+        }
+
+
+
+        .bg2 {
+            background: url('./images/package1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+        .bg3 {
+            background: url('./images/ogline1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+        .bg4 {
+            background: url('./images/ogline1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+        .bg5 {
+            background: url('./images/wline1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 20%;
+        }
+
+        .bgk {
+            background: url('./images/visual2.jpg');
+            background-attachment: fixed;
+            background-size: auto 100%;
+            background-position: center;
+
+            transition: 1.5s ease-in-out;
+        }
+
+        .bgw {
+            background-color: white;
+
+            transition: 1.5s ease-in-out;
+        }
+
+        .bgo {
+            background-color: rgba(254, 74, 38, 1);
+            opacity: 1;
+            transition: 1.5s ease-in-out;
+        }
+
+        .block1 {
+
+            height: 100%;
+
+        }
+
+        .block2 {
+            height: 100%;
+            /* background-color: rgba(254, 74, 38, 1); */
+        }
+
+        .block3 {
+            height: 100%;
+            /* background-color: #fff; */
+        }
+
+        @keyframes back_on1 {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-20%)
+            }
+        }
+
+        .block4 {
+            height: 100%;
+            /* background-color: rgba(255, 232, 228, 1) */
+        }
+
+        .block5 {
+            height: 100%;
+
+        }
+
+        .bgb {
+            background-color: rgba(255, 232, 228, 1);
+            transition: 1.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header flex float-right mt-16 mr-16 ">
+        <div class="a bg-gray-200 h-12 w-24  mr-5 ">1</div>
+        <div class="b bg-gray-300 h-12 w-24  mr-5 ">2</div>
+        <div class="c bg-gray-400 h-12 w-24  mr-5 ">3</div>
+        <div class="d bg-gray-500 h-12 w-24  mr-5 ">4</div>
+        <div class="bigBtn  bg-gray-700  h-12 w-32 ">5</div>
+    </div>
+
+
+    <div class="box">
+
+
+
+        <section id="1" class=" min-h-screen scroll_element  sec1" style="">
+            <div class="block w-full  text-center   ">
+                <div class="block1 bgk"></div>
+            </div>
+            <div class="content bg1 fixed">
+                <!-- <img src=""  alt=""> -->
+            </div>
+
+        </section>
+
+
+        <section id="2" class=" min-h-screen scroll_element sec2">
+            <div class="block w-full  text-center   ">
+                <div class="block2 bgk"></div>
+            </div>
+            <div class="content bg2 fixed">
+            </div>
+
+        </section>
+        <section id="3" class=" min-h-screen scroll_element sec3">
+            <div class="block w-full  text-center   ">
+                <div class="block3 bgo"></div>
+            </div>
+            <div class="content bg3 fixed">
+                <!-- <img src=""  alt=""> -->
+            </div>
+        </section>
+        <section id="4" class=" min-h-screen scroll_element sec4">
+            <div class="block w-full  text-center ">
+                <div class="block4 bgw"></div>
+            </div>
+            <div class="content bg4 fixed">
+                <!-- <img src=""  alt=""> -->
+            </div>
+        </section>
+        <section id="5" class=" min-h-screen scroll_element sec5">
+            <div class="block w-full  text-center ">
+                <div class="block5 bgb"></div>
+            </div>
+            <div class="content bg5 fixed">
+                <!-- <img src=""  alt=""> -->
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        //get down---------------------------------------------------------
+        gsap.to(".bg1", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            // ease: CustomEase.create("custom", "M0,0 C0.69,-0.02 1,0.4 1,1"),
+            scrollTrigger: {
+                trigger: ".sec1",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+                // toggleClass:{targets:".block1",className: "frame_off",targets:".block2",className: "frame_on"}
+
+                end: () => {
+                    window.addEventListener("scroll", check2);
+                    check2()
+
+                    function check2() {
+
+                        var s2tp = document.querySelector('.sec2').getBoundingClientRect().top
+
+
+                        if ($('.block2').hasClass('bgk') && s2tp <= 50) {
+
+                            $('.block2').addClass('bgo');
+                            gsap.to('.bgo', {
+                                opacity: 1,
+
+                            })
+                            $('.block2').removeClass('bgk');
+                            $('.block1').removeClass('bgk');
+                            $('.block1').addClass('bgo');
+
+
+                        }
+
+                    }
+                },
+            },
+
+        })
+
+
+        gsap.to(".bg2", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec2",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+                end: () => {
+                    window.addEventListener("scroll", check3);
+                    check3()
+
+                    function check3() {
+
+                        var s3tp = document.querySelector('.sec3').getBoundingClientRect().top
+
+
+                        if ($('.block3').hasClass('bgo') && s3tp <= 50) {
+                            gsap.to('.bgo', {
+                                opacity: 1,
+                            })
+                            $('.block3').addClass('bgw');
+                            gsap.to('.bgw', {
+                                opacity: 1,
+                            })
+                            $('.block3').removeClass('bgo');
+                            $('.block2').removeClass('bgo');
+                            $('.block2').addClass('bgw');
+
+                        }
+                        // else if($('.sec2').hasClass('bgo') && s2tp > 10){
+                        //     $('.sec2').addClass('bgk');
+                        //     gsap.to('.bgk', {
+                        //         opacity: 1,
+                        //     })
+                        //     $('.sec2').removeClass('bgo');
+                        // };
+                    }
+                },
+            }
+        })
+        gsap.to(".bg3", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec3",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+
+
+                end: () => {
+                    window.addEventListener("scroll", check4);
+                    check4()
+
+                    function check4() {
+
+                        var s4tp = document.querySelector('.sec4').getBoundingClientRect().top
+
+                        if ($('.block4').hasClass('bgw') && s4tp <= 50) {
+                            gsap.to('.bgw', {
+                                opacity: 1,
+                            })
+                            $('.block4').addClass('bgb');
+                            gsap.to('.bgb', {
+                                opacity: 1,
+                            })
+                            $('.block4').removeClass('bgw');
+                            $('.block3').removeClass('bgw');
+                            $('.block3').addClass('bgb');
+
+                        }
+                    }
+                },
+            }
+        })
+        gsap.to(".bg4", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec4",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+                end: () => {
+                    window.addEventListener("scroll", check5);
+                    check5()
+
+                    function check5() {
+
+                        var s5tp = document.querySelector('.sec5').getBoundingClientRect().top
+
+                        if ($('.block5').hasClass('bgb') && s5tp <= 50) {
+                            gsap.to('.bgb', {
+                                opacity: 1,
+                            })
+                            $('.block5').addClass('bgo');
+                            gsap.to('.bgo', {
+                                opacity: 1,
+                            })
+                            $('.block5').removeClass('bgb');
+                            $('.block4').removeClass('bgb');
+                            $('.block4').addClass('bgo');
+
+                        }
+
+                    }
+                },
+            }
+        })
+
+        gsap.to(".bg5", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec5",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+            }
+        })
+
+
+        // get up---------------------------------
+        gsap.from(".bg2", {
+            y: 400,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec1",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+                end: () => {
+                    window.addEventListener("scroll", back2);
+                    back2()
+
+                    function back2() {
+
+                        var s2bt = document.querySelector('.sec2').getBoundingClientRect().bottom
+            
+                        
+                        if ($('.block2').hasClass('bgo') && s2bt >= 2436) {
+                            $('.block1').removeClass('bgo');
+                            $('.block1').addClass('bgk');  
+                            $('.block2').removeClass('bgo');
+                            $('.block2').addClass('bgk');
+
+                        }
+
+                    }
+                },
+
+
+            }
+
+        })
+
+
+
+        gsap.from(".bg3", {
+            y: 400,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec2",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+                end: () => {
+                    window.addEventListener("scroll", back3);
+                    back3()
+
+                    function back3() {
+
+                        var s3bt = document.querySelector('.sec3').getBoundingClientRect().bottom
+            
+                        
+                        if ($('.block3').hasClass('bgw') && s3bt >= 2436) {
+                            $('.block2').removeClass('bgw');
+                            $('.block2').addClass('bgo');  
+                            $('.block3').removeClass('bgw');
+                            $('.block3').addClass('bgo');
+
+                        }
+
+                    }
+                },
+
+            }
+
+        }, )
+
+        gsap.from(".bg4", {
+            y: 400,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec3",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+                end: () => {
+                    window.addEventListener("scroll", back4);
+                    back4()
+
+                    function back4() {
+
+                        var s4bt = document.querySelector('.sec4').getBoundingClientRect().bottom
+            
+                        
+                        if ($('.block4').hasClass('bgb') && s4bt >= 2436) {
+                            $('.block3').removeClass('bgb');
+                            $('.block3').addClass('bgw');  
+                            $('.block4').removeClass('bgb');
+                            $('.block4').addClass('bgw');
+
+                        }
+
+                    }
+                },
+            }
+
+        }, )
+
+
+        gsap.from(".bg5", {
+            y: 400,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec4",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+                end: () => {
+                    window.addEventListener("scroll", back5);
+                    back5()
+
+                    function back5() {
+
+                        var s5bt = document.querySelector('.sec5').getBoundingClientRect().bottom
+            
+                        console.log(s5bt)
+                        if ($('.block5').hasClass('bgo') && s5bt >= 2436) {
+                            $('.block4').removeClass('bgo');
+                            $('.block4').addClass('bgb');  
+                            $('.block5').removeClass('bgo');
+                            $('.block5').addClass('bgb');
+
+                        }
+
+                    }
+                },
+            }
+
+        }, )
+    </script>
+
+
+
+
+</body>
+
+</html>
