@@ -21,10 +21,6 @@
         body {
             height: 100%;
             width: 100%;
-            background: url('./images/visual2.jpg');
-            background-attachment: fixed;
-            background-size: auto 100%;
-            background-position: center;
         }
 
         .block {
@@ -108,19 +104,27 @@
             background-size: auto 100%;
             background-position: center;
 
-            transition: 1.5s ease-in-out;
+            transition: .5s ease-in-out;
+
         }
 
         .bgw {
             background-color: white;
 
-            transition: 1.5s ease-in-out;
+            transition: .5s ease-in-out;
         }
 
         .bgo {
             background-color: rgba(254, 74, 38, 1);
             opacity: 1;
-            transition: 1.5s ease-in-out;
+            transition: .5s ease-in-out;
+            /* transition-property: background-color,border-color,color,fill,opacity; */
+        }
+
+        .bgb {
+            background-color: rgba(255, 232, 228, 1);
+            transition: .5s ease-in-out;
+            /* transition-property: background-color,border-color,color,fill,opacity; */
         }
 
         .block1 {
@@ -139,16 +143,6 @@
             /* background-color: #fff; */
         }
 
-        @keyframes back_on1 {
-            0% {
-                transform: translateX(0)
-            }
-
-            100% {
-                transform: translateX(-20%)
-            }
-        }
-
         .block4 {
             height: 100%;
             /* background-color: rgba(255, 232, 228, 1) */
@@ -159,31 +153,79 @@
 
         }
 
-        .bgb {
-            background-color: rgba(255, 232, 228, 1);
-            transition: 1.5s ease-in-out;
+        /* //////////////////////////// */
+        .change_element {
+            transition-duration: .5s;
+            transition-timing-function: ease-in-out;
+            /* transition-property: background-color,border-color,color,fill,opacity; */
         }
+
+        /* .menu {    border-radius: 30px;
+    border-width: 2px;
+    border-style: solid;
+    display: block;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    z-index: 400;}
+
+
+
+    .menu>div:nth-child(1) {
+    transform: translateY(-8px);
+}
+
+.menu a>div:nth-child(2) {
+    transform: translateY(-1px);}
+
+    .menu a>div:nth-child(3) {
+    transform: translateY(6px);
+}
+
+.menu div {
+    width: 26px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 0 0 0 -13px;
+    overflow: hidden;
+} */
     </style>
 </head>
 
 <body>
 
-    <div class="header flex float-right mt-16 mr-16 ">
+    <!-- <div class="header1 flex float-right mt-16 mr-16 ">
         <div class="a bg-gray-200 h-12 w-24  mr-5 ">1</div>
         <div class="b bg-gray-300 h-12 w-24  mr-5 ">2</div>
         <div class="c bg-gray-400 h-12 w-24  mr-5 ">3</div>
         <div class="d bg-gray-500 h-12 w-24  mr-5 ">4</div>
         <div class="bigBtn  bg-gray-700  h-12 w-32 ">5</div>
-    </div>
-
+    </div> -->
+    <!-- <div class="header2 flex float-right mt-16 mr-16 ">
+        <div class="a bg-gray-200 h-12 w-24  mr-5 ">お問い合わせ</div>
+        <div class="bigBtn    h-12 w-32 menu">
+            <a href="javascript:void(0);" class="" style="    width: 60px;
+            height: 60px;
+            margin: 0 0 0 30px;
+            overflow: visible;
+            user-select: auto;
+            pointer-events: auto;">
+                <div><span><span class=""></span></span></div>
+                <div><span><span class=""></span></span></div>
+                <div><span><span class=""></span></span></div>
+            </a></div>
+    </div> -->
 
     <div class="box">
 
 
 
-        <section id="1" class=" min-h-screen scroll_element  sec1" style="">
+        <section id="1" class=" min-h-screen scroll_element  sec1 bgk" style="">
             <div class="block w-full  text-center   ">
-                <div class="block1 bgk"></div>
+                <div class="block1 "></div>
             </div>
             <div class="content bg1 fixed">
                 <!-- <img src=""  alt=""> -->
@@ -192,7 +234,7 @@
         </section>
 
 
-        <section id="2" class=" min-h-screen scroll_element sec2">
+        <section id="2" class=" min-h-screen scroll_element sec2 bgk">
             <div class="block w-full  text-center   ">
                 <div class="block2 bgk"></div>
             </div>
@@ -266,8 +308,11 @@
 
                             })
                             $('.block2').removeClass('bgk');
-                            $('.block1').removeClass('bgk');
                             $('.block1').addClass('bgo');
+                            // $('.block1').removeClass('bgk');
+                            // $('.sec1').addClass('bgo');
+                            // $('section').addClass('bgo');
+                            // $('section').removeClass('bgk');
 
 
                         }
@@ -277,8 +322,6 @@
             },
 
         })
-
-
         gsap.to(".bg2", {
             y: 350,
             opacity: 0,
@@ -395,7 +438,6 @@
                 },
             }
         })
-
         gsap.to(".bg5", {
             y: 350,
             opacity: 0,
@@ -411,6 +453,8 @@
 
 
         // get up---------------------------------
+
+
         gsap.from(".bg2", {
             y: 400,
             opacity: 0,
@@ -428,13 +472,26 @@
                     function back2() {
 
                         var s2bt = document.querySelector('.sec2').getBoundingClientRect().bottom
-            
-                        
+
+                        var timeout = null;
                         if ($('.block2').hasClass('bgo') && s2bt >= 2436) {
-                            $('.block1').removeClass('bgo');
-                            $('.block1').addClass('bgk');  
-                            $('.block2').removeClass('bgo');
-                            $('.block2').addClass('bgk');
+                            gsap.to('.bgo', {
+                                opacity: 0,
+                                duration: 1,
+                            })
+
+
+                          
+                                $('.block1').removeClass('bgo');
+                                $('.block2').removeClass('bgo');
+                                $('.block2').addClass('bgk');
+                          
+                            
+                            
+                            // $('.block2').removeClass('bgo');
+                            // $('section').removeClass('bgo');
+                            // $('.block2').addClass('bgk');
+                            // $('section').addClass('bgk');
 
                         }
 
@@ -445,9 +502,6 @@
             }
 
         })
-
-
-
         gsap.from(".bg3", {
             y: 400,
             opacity: 0,
@@ -465,11 +519,11 @@
                     function back3() {
 
                         var s3bt = document.querySelector('.sec3').getBoundingClientRect().bottom
-            
-                        
+
+
                         if ($('.block3').hasClass('bgw') && s3bt >= 2436) {
                             $('.block2').removeClass('bgw');
-                            $('.block2').addClass('bgo');  
+                            $('.block2').addClass('bgo');
                             $('.block3').removeClass('bgw');
                             $('.block3').addClass('bgo');
 
@@ -481,7 +535,6 @@
             }
 
         }, )
-
         gsap.from(".bg4", {
             y: 400,
             opacity: 0,
@@ -499,11 +552,11 @@
                     function back4() {
 
                         var s4bt = document.querySelector('.sec4').getBoundingClientRect().bottom
-            
-                        
+
+
                         if ($('.block4').hasClass('bgb') && s4bt >= 2436) {
                             $('.block3').removeClass('bgb');
-                            $('.block3').addClass('bgw');  
+                            $('.block3').addClass('bgw');
                             $('.block4').removeClass('bgb');
                             $('.block4').addClass('bgw');
 
@@ -514,8 +567,6 @@
             }
 
         }, )
-
-
         gsap.from(".bg5", {
             y: 400,
             opacity: 0,
@@ -533,11 +584,11 @@
                     function back5() {
 
                         var s5bt = document.querySelector('.sec5').getBoundingClientRect().bottom
-            
+
                         console.log(s5bt)
                         if ($('.block5').hasClass('bgo') && s5bt >= 2436) {
                             $('.block4').removeClass('bgo');
-                            $('.block4').addClass('bgb');  
+                            $('.block4').addClass('bgb');
                             $('.block5').removeClass('bgo');
                             $('.block5').addClass('bgb');
 
