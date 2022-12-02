@@ -127,6 +127,16 @@
             /* transition-property: background-color,border-color,color,fill,opacity; */
         }
 
+
+
+
+
+
+
+
+
+
+
         .block1 {
 
             height: 100%;
@@ -192,6 +202,37 @@
     margin: 0 0 0 -13px;
     overflow: hidden;
 } */
+
+.fixxed{position: fixed;opacity: 0;}
+        .backcon {
+            overflow: hidden;
+            height: 1200px;
+            top: 0;
+            float: right;
+
+        }
+
+        .backimg {
+            background: url("https://ace-industry.co.jp/danikuru/img/visual2.jpg") repeat-x;
+            background-size: auto 100%;
+            background-position: fixed;
+            height: 100%;
+            width: 7680px;
+            animation: slide 100s linear infinite;
+
+        }
+
+
+        @keyframes slide {
+            0% {
+                transform: translate(0);
+            }
+
+            100% {
+                transform: translate(-3840px);
+                /* The image width */
+            }
+        }
     </style>
 </head>
 
@@ -220,10 +261,12 @@
     </div> -->
 
     <div class="box">
+        <div class="backcon fixxed">
+            <div class="backimg"></div>
+        </div>
 
 
-
-        <section id="1" class=" min-h-screen scroll_element  sec1 bgk" style="">
+        <section id="1" class=" min-h-screen scroll_element  sec1" style="">
             <div class="block w-full  text-center   ">
                 <div class="block1 "></div>
             </div>
@@ -234,9 +277,9 @@
         </section>
 
 
-        <section id="2" class=" min-h-screen scroll_element sec2 bgk">
+        <section id="2" class=" min-h-screen scroll_element sec2 ">
             <div class="block w-full  text-center   ">
-                <div class="block2 bgk"></div>
+                <div class="block2 "></div>
             </div>
             <div class="content bg2 fixed">
             </div>
@@ -300,20 +343,18 @@
                         var s2tp = document.querySelector('.sec2').getBoundingClientRect().top
 
 
-                        if ($('.block2').hasClass('bgk') && s2tp <= 50) {
+                        if ( s2tp <= 50) {
 
                             $('.block2').addClass('bgo');
                             gsap.to('.bgo', {
                                 opacity: 1,
 
                             })
-                            $('.block2').removeClass('bgk');
+                            // $('.block2').removeClass('bgk');
                             $('.block1').addClass('bgo');
-                            // $('.block1').removeClass('bgk');
-                            // $('.sec1').addClass('bgo');
-                            // $('section').addClass('bgo');
-                            // $('section').removeClass('bgk');
-
+                            $('.backcon').removeClass('fixxed')
+                 
+                        
 
                         }
 
@@ -350,8 +391,8 @@
                                 opacity: 1,
                             })
                             $('.block3').removeClass('bgo');
-                            $('.block2').removeClass('bgo');
                             $('.block2').addClass('bgw');
+                            $('.block2').removeClass('bgo');
 
                         }
                         // else if($('.sec2').hasClass('bgo') && s2tp > 10){
@@ -474,24 +515,33 @@
                         var s2bt = document.querySelector('.sec2').getBoundingClientRect().bottom
 
                         var timeout = null;
-                        if ($('.block2').hasClass('bgo') && s2bt >= 2436) {
+                        if (s2bt >= 2436) {
                             gsap.to('.bgo', {
                                 opacity: 0,
-                                duration: 1,
+                                duration: 0.2,
+                                ease: Power4.easeInOut,
                             })
 
 
-                          
-                                $('.block1').removeClass('bgo');
-                                $('.block2').removeClass('bgo');
-                                $('.block2').addClass('bgk');
-                          
-                            
-                            
+                            $('.block1').removeClass('bgo');
+
+
+                            $('.block2').removeClass('bgo');
+                            // $('.block1').addClass('bgk');
+                            // $('.sec1').addClass('bgk');
+
+
                             // $('.block2').removeClass('bgo');
                             // $('section').removeClass('bgo');
                             // $('.block2').addClass('bgk');
                             // $('section').addClass('bgk');
+
+                            $('.backcon').addClass('fixxed')
+                            gsap.to('.fixxed', {
+                                opacity: 1,
+                                // duration: 0.2,
+                                ease: Power4.easeInOut,
+                            })
 
                         }
 
