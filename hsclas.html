@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com/css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
@@ -57,6 +57,7 @@
             background-size: 320px 470px;
             background-position: center;
             z-index: 9;
+            /* margin-bottom: 20px; */
         }
 
 
@@ -98,7 +99,7 @@
             top: 20%;
         }
 
-        .bgk {
+        /* .bgk {
             background: url('./images/visual2.jpg');
             background-attachment: fixed;
             background-size: auto 100%;
@@ -106,7 +107,7 @@
 
             transition: .5s ease-in-out;
 
-        }
+        } */
 
         .bgw {
             background-color: white;
@@ -145,17 +146,17 @@
 
         .block2 {
             height: 100%;
-            /* background-color: rgba(254, 74, 38, 1); */
+          
         }
 
         .block3 {
             height: 100%;
-            /* background-color: #fff; */
+    
         }
 
         .block4 {
             height: 100%;
-            /* background-color: rgba(255, 232, 228, 1) */
+        
         }
 
         .block5 {
@@ -203,34 +204,127 @@
     overflow: hidden;
 } */
 
-.fixxed{position: fixed;opacity: 0;}
+        .fixxed {
+            position: fixed;
+            opacity: 0;
+        }
+
         .backcon {
             overflow: hidden;
             height: 1200px;
             top: 0;
-            float: right;
+            position: relative;
 
         }
 
-        .backimg {
+        .bgk {
             background: url("https://ace-industry.co.jp/danikuru/img/visual2.jpg") repeat-x;
             background-size: auto 100%;
             background-position: fixed;
             height: 100%;
             width: 7680px;
-            animation: slide 100s linear infinite;
+            animation: slide 200s linear infinite;
+            position: fixed;
+        
 
         }
 
+        .whiteimg {
+            background: url("./images/visual1.jpg");
+            height: 80%;
+            width: 2000px;
+            background-size: auto 100%;
+            position: absolute;
+        }
 
         @keyframes slide {
             0% {
-                transform: translate(0);
+                transform: translate(50px);
             }
 
             100% {
                 transform: translate(-3840px);
                 /* The image width */
+            }
+        }
+
+        .load {
+            max-height: 100%;
+            min-width: 100%;
+            position: relative;
+            background-color: white;
+        }
+
+        .txt-w {
+            display: flex;
+            min-width: 730px;
+            height: 60px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .txt-w .jp {
+            width: 730px;
+            font-family: 'Gothic MB101 Bold', sans-serif;
+            font-size: 60px;
+            line-height: 60px;
+            font-feature-settings: "palt";
+            font-weight: 1000;
+            position: absolute;
+
+        }
+
+        .load_icon {
+            position: absolute;
+            bottom: 28%;
+            right: 60px;
+            text-align: right;
+
+        }
+
+        .load_icon p {
+            font-size: 16px;
+            line-height: 16px;
+            font-family: Oswald, sans-serif;
+            width: 60px;
+        }
+
+        .filter {
+            /* background-color: antiquewhite; */
+            background-color: #fff;
+            height: 60px;
+            display: inline-block;
+            width: 730px;
+            position: absolute;
+        }
+
+
+
+
+
+        .load_icon p>span:nth-child(1) {
+            animation: load_blink1 .5s ease-in-out infinite
+        }
+
+        .load_icon p>span:nth-child(2) {
+            animation: load_blink1 .5s ease-in-out 50ms infinite
+        }
+
+        .load_icon p>span:nth-child(3) {
+            animation: load_blink1 .5s ease-in-out .1s infinite
+        }
+
+        @keyframes load_blink1 {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0
             }
         }
     </style>
@@ -260,56 +354,61 @@
             </a></div>
     </div> -->
 
-    <div class="box">
-        <div class="backcon fixxed">
-            <div class="backimg"></div>
+    <section class="box sec1">
+        <div class="backcon fixxed" style="display:flex">
+            <div class="bgk block1"></div>
+            <div class="whiteimg"></div>
+            <div class="load">
+                <div class="txt-w">
+                    <div class="jp">その寝袋、<span style="color: rgba(254,74,38,1);">ダニ</span>がいるかも。</div>
+                    <div class="filter"></div>
+                </div>
+                <div class="load_icon">
+                    <p>LOADING<span>.</span><span>.</span><span>.</span></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="content bg1 fixed">
+
+        
+    </section>
+
+
+
+    <section id="2" class=" min-h-screen scroll_element sec2 ">
+        <div class="block w-full  text-center   ">
+            <div class="block2 bgk"></div>
+        </div>
+        <div class="content bg2 fixed">
         </div>
 
+    </section>
+    <section id="3" class=" min-h-screen scroll_element sec3">
+        <div class="block w-full  text-center   ">
+            <div class="block3 bgo"></div>
+        </div>
+        <div class="content bg3 fixed">
+            <!-- <img src=""  alt=""> -->
+        </div>
+    </section>
+    <section id="4" class=" min-h-screen scroll_element sec4">
+        <div class="block w-full  text-center ">
+            <div class="block4 bgw"></div>
+        </div>
+        <div class="content bg4 fixed">
+            <!-- <img src=""  alt=""> -->
+        </div>
+    </section>
+    <section id="5" class=" min-h-screen scroll_element sec5">
+        <div class="block w-full  text-center ">
+            <div class="block5 bgb"></div>
+        </div>
+        <div class="content bg5 fixed">
+            <!-- <img src=""  alt=""> -->
+        </div>
+    </section>
 
-        <section id="1" class=" min-h-screen scroll_element  sec1" style="">
-            <div class="block w-full  text-center   ">
-                <div class="block1 "></div>
-            </div>
-            <div class="content bg1 fixed">
-                <!-- <img src=""  alt=""> -->
-            </div>
-
-        </section>
-
-
-        <section id="2" class=" min-h-screen scroll_element sec2 ">
-            <div class="block w-full  text-center   ">
-                <div class="block2 "></div>
-            </div>
-            <div class="content bg2 fixed">
-            </div>
-
-        </section>
-        <section id="3" class=" min-h-screen scroll_element sec3">
-            <div class="block w-full  text-center   ">
-                <div class="block3 bgo"></div>
-            </div>
-            <div class="content bg3 fixed">
-                <!-- <img src=""  alt=""> -->
-            </div>
-        </section>
-        <section id="4" class=" min-h-screen scroll_element sec4">
-            <div class="block w-full  text-center ">
-                <div class="block4 bgw"></div>
-            </div>
-            <div class="content bg4 fixed">
-                <!-- <img src=""  alt=""> -->
-            </div>
-        </section>
-        <section id="5" class=" min-h-screen scroll_element sec5">
-            <div class="block w-full  text-center ">
-                <div class="block5 bgb"></div>
-            </div>
-            <div class="content bg5 fixed">
-                <!-- <img src=""  alt=""> -->
-            </div>
-        </section>
-    </div>
 
 
 
@@ -320,20 +419,64 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
+
+
+        //loading----------------------------------------------試試timeline寫法
+        gsap.to(".filter", {
+            x: '1200px',
+
+            duration: 1,
+        })
+        gsap.to(".filter", {
+            y: '250px',
+            x: '-730px',
+
+            duration: 1,
+            delay: 1,
+        })
+        gsap.to(".filter", {
+            y: '0',
+            // x:'-730px',
+            duration: 1,
+            delay: 2,
+        })
+        gsap.to(".filter", {
+
+            width: '1500px',
+            duration: 1,
+            delay: 3,
+        })
+        gsap.to(".load", {
+            opacity: 0,
+            delay: 4,
+        })
+        gsap.from(".bg1", {
+            y: 400,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            delay: 5
+        })
+        gsap.to(".whiteimg", {
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            delay: 5
+        })
+
+
         //get down---------------------------------------------------------
         gsap.to(".bg1", {
             y: 350,
             opacity: 0,
             duration: 1,
             ease: Power4.easeInOut,
-            // ease: CustomEase.create("custom", "M0,0 C0.69,-0.02 1,0.4 1,1"),
+
             scrollTrigger: {
                 trigger: ".sec1",
                 start: "bottom center",
                 markers: true,
                 scrub: true,
-                // toggleClass:{targets:".block1",className: "frame_off",targets:".block2",className: "frame_on"}
-
                 end: () => {
                     window.addEventListener("scroll", check2);
                     check2()
@@ -343,18 +486,20 @@
                         var s2tp = document.querySelector('.sec2').getBoundingClientRect().top
 
 
-                        if ( s2tp <= 50) {
+                        if ($('.block2').hasClass('bgk')&&s2tp <= 50) {
 
+                            gsap.to('.bgk', {
+                                opacity: 0,
+                            })
                             $('.block2').addClass('bgo');
                             gsap.to('.bgo', {
                                 opacity: 1,
-
                             })
-                            // $('.block2').removeClass('bgk');
-                            $('.block1').addClass('bgo');
-                            $('.backcon').removeClass('fixxed')
-                 
-                        
+                            $('.block2').removeClass('bgk');
+                            $('.block1').removeClass('bgk');
+                            $('.sec1').addClass('bgo');
+
+
 
                         }
 
@@ -382,7 +527,7 @@
                         var s3tp = document.querySelector('.sec3').getBoundingClientRect().top
 
 
-                        if ($('.block3').hasClass('bgo') && s3tp <= 50) {
+                        if ( s3tp <= 50) {
                             gsap.to('.bgo', {
                                 opacity: 1,
                             })
@@ -391,17 +536,11 @@
                                 opacity: 1,
                             })
                             $('.block3').removeClass('bgo');
-                            $('.block2').addClass('bgw');
                             $('.block2').removeClass('bgo');
+                            $('.block2').addClass('bgw');
 
                         }
-                        // else if($('.sec2').hasClass('bgo') && s2tp > 10){
-                        //     $('.sec2').addClass('bgk');
-                        //     gsap.to('.bgk', {
-                        //         opacity: 1,
-                        //     })
-                        //     $('.sec2').removeClass('bgo');
-                        // };
+                        
                     }
                 },
             }
@@ -495,6 +634,11 @@
 
         // get up---------------------------------
 
+       
+
+
+//2往1
+
 
         gsap.from(".bg2", {
             y: 400,
@@ -510,38 +654,36 @@
                     window.addEventListener("scroll", back2);
                     back2()
 
+
+
+                    
                     function back2() {
 
                         var s2bt = document.querySelector('.sec2').getBoundingClientRect().bottom
 
                         var timeout = null;
-                        if (s2bt >= 2436) {
-                            gsap.to('.bgo', {
-                                opacity: 0,
-                                duration: 0.2,
-                                ease: Power4.easeInOut,
-                            })
-
-
-                            $('.block1').removeClass('bgo');
-
-
-                            $('.block2').removeClass('bgo');
-                            // $('.block1').addClass('bgk');
-                            // $('.sec1').addClass('bgk');
-
-
-                            // $('.block2').removeClass('bgo');
-                            // $('section').removeClass('bgo');
-                            // $('.block2').addClass('bgk');
-                            // $('section').addClass('bgk');
+                        if (s2bt >= 2436 ) {
+                            // gsap.to('.bgo', {
+                            //     opacity: 0,
+                            //     duration: 0.2,
+                            //     ease: Power4.easeInOut,
+                            // })
 
                             $('.backcon').addClass('fixxed')
                             gsap.to('.fixxed', {
                                 opacity: 1,
-                                // duration: 0.2,
+                                
                                 ease: Power4.easeInOut,
                             })
+
+                        }
+
+                        
+                        if ($('.block2').hasClass('bgo') && s2bt >= 2436) {
+                            $('.block1').removeClass('bgo');
+                            $('.block1').addClass('bgk');
+                            $('.block2').removeClass('bgo');
+                            $('.block2').addClass('bgk');
 
                         }
 
@@ -552,6 +694,8 @@
             }
 
         })
+
+        //3往2
         gsap.from(".bg3", {
             y: 400,
             opacity: 0,
@@ -617,6 +761,9 @@
             }
 
         }, )
+
+
+        //5往上
         gsap.from(".bg5", {
             y: 400,
             opacity: 0,
@@ -635,7 +782,7 @@
 
                         var s5bt = document.querySelector('.sec5').getBoundingClientRect().bottom
 
-                        console.log(s5bt)
+                        // console.log(s5bt)
                         if ($('.block5').hasClass('bgo') && s5bt >= 2436) {
                             $('.block4').removeClass('bgo');
                             $('.block4').addClass('bgb');
