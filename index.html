@@ -146,17 +146,17 @@
 
         .block2 {
             height: 100%;
-          
+
         }
 
         .block3 {
             height: 100%;
-    
+
         }
 
         .block4 {
             height: 100%;
-        
+
         }
 
         .block5 {
@@ -222,10 +222,10 @@
             background-size: auto 100%;
             background-position: fixed;
             height: 100%;
-            width: 7680px;
+            width: 8500px;
             animation: slide 200s linear infinite;
             position: fixed;
-        
+
 
         }
 
@@ -239,7 +239,7 @@
 
         @keyframes slide {
             0% {
-                transform: translate(50px);
+                transform: translate(-1610px);
             }
 
             100% {
@@ -369,9 +369,7 @@
             </div>
 
         </div>
-        <div class="content bg1 fixed">
-
-        
+        <div class="content bg1 fixed"></div>
     </section>
 
 
@@ -471,7 +469,6 @@
             opacity: 0,
             duration: 1,
             ease: Power4.easeInOut,
-
             scrollTrigger: {
                 trigger: ".sec1",
                 start: "bottom center",
@@ -486,10 +483,10 @@
                         var s2tp = document.querySelector('.sec2').getBoundingClientRect().top
 
 
-                        if ($('.block2').hasClass('bgk')&&s2tp <= 50) {
+                        if ($('.block2').hasClass('bgk') && s2tp <= 50) {
 
                             gsap.to('.bgk', {
-                                opacity: 0,
+                                opacity: 1,
                             })
                             $('.block2').addClass('bgo');
                             gsap.to('.bgo', {
@@ -527,7 +524,7 @@
                         var s3tp = document.querySelector('.sec3').getBoundingClientRect().top
 
 
-                        if ( s3tp <= 50) {
+                        if (s3tp <= 50) {
                             gsap.to('.bgo', {
                                 opacity: 1,
                             })
@@ -540,7 +537,7 @@
                             $('.block2').addClass('bgw');
 
                         }
-                        
+
                     }
                 },
             }
@@ -634,10 +631,10 @@
 
         // get up---------------------------------
 
-       
 
 
-//2往1
+
+        //2往1
 
 
         gsap.from(".bg2", {
@@ -656,13 +653,13 @@
 
 
 
-                    
+
                     function back2() {
 
                         var s2bt = document.querySelector('.sec2').getBoundingClientRect().bottom
 
                         var timeout = null;
-                        if (s2bt >= 2436 ) {
+                        if (s2bt >= 2436) {
                             // gsap.to('.bgo', {
                             //     opacity: 0,
                             //     duration: 0.2,
@@ -672,13 +669,17 @@
                             $('.backcon').addClass('fixxed')
                             gsap.to('.fixxed', {
                                 opacity: 1,
-                                
+
                                 ease: Power4.easeInOut,
                             })
-
+                            gsap.to('.bgk', {
+                                opacity: 1,
+                                duration: 0.2,
+                                ease: Power4.easeInOut,
+                            })
                         }
 
-                        
+
                         if ($('.block2').hasClass('bgo') && s2bt >= 2436) {
                             $('.block1').removeClass('bgo');
                             $('.block1').addClass('bgk');
