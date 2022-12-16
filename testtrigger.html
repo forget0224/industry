@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+
+    <style>
+        .block {
+            max-width: 100%;
+            height: 100%;
+            /* padding: 180px 0; */
+            position: relative;
+            font-size: 0;
+            line-height: 0;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        section {
+            height: 2000px;
+        }
+
+        .active {
+            border-top: 1px solid green;
+            background-color: #4179f7;
+            color: #fff;
+        }
+
+        .abs {
+            position: absolute;
+            bottom: 30px;
+        }
+
+        .content {
+            width: 100%;
+            height: 500px;
+
+        }
+
+        .bg1 {
+            background: url('./images/sheet1.png');
+            background-repeat: no-repeat;
+            background-size: 320px 470px;
+            background-position: center;
+
+        }
+
+
+
+        .bg2 {
+            background: url('./images/package1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            top: 15%;
+            opacity: 0;
+            /* transform: translateY(300px); */
+        }
+
+        .bg3 {
+            background: url('./images/ogline1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+        }
+
+        .bg4 {
+            background: url('./images/wline1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+        }
+
+        .sticky {
+            top: 15%;
+        }
+
+        /* .bg2 .show{ transform: translateY(600px)!important;} */
+        .show {
+            top: 15%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header flex float-right mt-16 mr-16 ">
+        <div class="a bg-gray-200 h-12 w-24  mr-5 ">1</div>
+        <div class="b bg-gray-300 h-12 w-24  mr-5 ">2</div>
+        <div class="c bg-gray-400 h-12 w-24  mr-5 ">3</div>
+        <div class="d bg-gray-500 h-12 w-24  mr-5 ">4</div>
+        <div class="bigBtn  bg-gray-700  h-12 w-32 ">5</div>
+    </div>
+
+    <section id="1" class="bg-gray-100 min-h-screen scroll_element  " style="">
+        <div class="block w-full  text-center   ">
+            <div class="content bg1 sticky">
+                <!-- <img src=""  alt=""> -->
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section id="2" class="bg-gray-200 min-h-screen scroll_element ">
+        <div class="block w-full  text-center   ">
+            <div class="content bg2 sticky">
+                <!-- <img src=""  alt=""> -->
+            </div>
+        </div>
+
+    </section>
+    <section id="3" class="bg-gray-300 min-h-screen scroll_element">
+        <div class="block w-full  text-center   ">
+            <div class="content bg3 sticky">
+                <!-- <img src=""  alt=""> -->
+            </div>
+        </div>
+    </section>
+    <section id="4" class="bg-gray-400 min-h-screen scroll_element">
+        <div class="block w-full  text-center   ">
+            <div class="content bg4 sticky">
+                <!-- <img src=""  alt=""> -->
+            </div>
+        </div>
+    </section>
+    <!--<section id="5" class="bg-gray-500 min-h-screen">
+        <div class="block w-full mr-auto text-center  ">
+            <div class="content  w-full fixed">
+                <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="6" class="bg-gray-600 min-h-screen">
+        <div class="block w-full mr-auto text-center  ">
+            <div class="content  w-full fixed">
+                <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="7" class="bg-gray-700 min-h-screen">
+        <div class="block w-full mr-auto text-center  ">
+            <div class="content  w-full fixed">
+                <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="8" class="bg-gray-800 min-h-screen">
+        <div class="block w-full mr-auto text-center  ">
+            <div class="content  w-full fixed">
+                <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="9" class="bg-gray-900 min-h-screen">
+        <div class="block w-full mr-auto text-center  ">
+            <div class="content  w-full fixed">
+                <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="10" class="bg-gray-300 min-h-screen">
+        <div class="block w-full mr-auto text-center  ">
+            <div class="content  w-full fixed">
+                <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="11" class="bg-gray-600 min-h-screen">
+        <div class="block w-full mr-auto text-center  ">
+            <div class="content  w-full fixed">
+                <img src="./images/sheet1.png" class="h-1/6 w-1/6 inline-block" alt="">
+            </div>
+        </div>
+    </section> -->
+
+
+
+
+
+
+
+    <script>
+        // onStart:動畫開始
+        // onUpdate:動畫進⾏中
+        // onComplete:動畫結束
+        // onUpdate: function () {
+        //     gsap.from('.bg2',1, {
+        //         opacity: 0,
+        //         y: -500,
+        //     })
+
+        // }
+
+
+
+        const timeline = gsap.timeline({})
+
+
+        let boxes = document.querySelectorAll(".content");
+        let secs = document.querySelectorAll("section");
+
+
+
+        function checkBoxes() {
+            secs.forEach((sec) => {
+
+
+                let secBottom = sec.getBoundingClientRect().bottom;
+                let secTop = sec.getBoundingClientRect().top;
+
+
+
+                let ct=sec.querySelector('.content')
+
+                // const triggerdown =(secBottom)+(sec.clientHeight / 2);
+                // const triggerup =(secTop)+(sec.clientHeight / 2);
+
+                //       console.log(scrollY+'scrollY')
+                  console.log(secTop+'secTop')
+                  console.log(secBottom+'secBottom')
+
+                if (secBottom = 700) {
+                    sec.classList.add("down");
+                    gsap.to('.down .bg1', {
+                            opacity: 0,
+                            duration: 1,
+                            y: 500
+
+                        })
+                        // .to('.bg2', {
+                        //     opacity: 1,
+                        //     duration: 1,
+                        //     y: -300
+                        // })
+
+
+
+
+
+
+
+
+                } else {
+                    sec.classList.remove("down");
+                    // gsap.from('.bg1', {
+                    //         opacity: 1,
+                    //         duration: 1,
+                    //         y: -300
+
+                    //     })
+                }
+                if(secTop=700){
+
+                    sec.classList.add("up");
+                    ct.classList.add*
+                    gsap.fromTo('.up .bg2',1,{opacity: 0,    
+                        y: 500}, {
+                        opacity: 1,
+                         y: '15%',
+                    })
+                }else{
+                    sec.classList.remove("up");
+               
+                }
+            });
+        }
+
+
+
+
+        window.addEventListener("scroll", checkBoxes);
+        checkBoxes();
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

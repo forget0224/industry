@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            /* background-color:rgba(254, 74, 38, 1) ; */
+        }
+
+        .block {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        section {
+            height: 2000px;
+            scroll-snap-align: start;
+            width: auto;
+            /* height: 100%; */
+            text-align: center;
+            margin: 0 auto;
+            background: url('./images/visual2.jpg');
+            background-attachment: fixed;
+            background-size: auto 100%;
+            background-position: center;
+        }
+
+
+        .content {
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            top: 10%
+        }
+
+        .bg1 {
+            background: url('./images/sheet1.png');
+            background-repeat: no-repeat;
+            background-size: 320px 470px;
+            background-position: center;
+            z-index: 9;
+        }
+
+
+
+        .bg2 {
+            background: url('./images/package1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+        .bg3 {
+            background: url('./images/ogline1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+        .bg4 {
+            background: url('./images/wline1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+
+
+        .fixed {
+            position: fixed;
+            top: 20%;
+        }
+
+
+
+        .bgw {
+            background-color: white;
+        }
+
+        .bgo {
+            background-color: rgba(254, 74, 38, 1);
+        }
+
+        .block1 {
+            width: auto;
+            height: 100%;
+            text-align: center;
+            margin: 0 auto;
+            background: url('./images/visual2.jpg');
+            background-attachment: fixed;
+            background-size: auto 100%;
+            background-position: center;
+            /* background-repeat: repeat-x; */
+            /* animation: back_on1 60s linear infinite */
+        }
+
+        .block2 {
+            height: 100%;
+            /* background-color: rgba(254, 74, 38, 1); */
+        }
+
+        .block3 {
+            height: 100%;
+            /* background-color: #fff; */
+        }
+
+        @keyframes back_on1 {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-20%)
+            }
+        }
+
+        .block4 {
+            height: 100%;
+            /* background-color: rgba(255, 232, 228, 1) */
+        }
+
+        .bgb {
+            background-color: rgba(255, 232, 228, 1)
+        }
+
+        .frame_on {
+            animation: frame_on1 1s cubic-bezier(.87, 0, .13, 1) forwards
+        }
+
+        /* @keyframes frame_on1 {
+            0% {
+                opacity: 0;
+                transform: translateY(50%)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        } */
+
+
+
+
+        .frame_off {
+            animation: frame_off1 1s cubic-bezier(.87, 0, .13, 1) forwards
+        }
+
+        /* 
+        @keyframes frame_off1 {
+            0% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(50%)
+            }
+        } */
+
+
+        .box {
+            height: 100%;
+
+            /* overflow-y: scroll; */
+            /* 在父容器上面使用 scroll-snap-type 属性 */
+            /* scroll-snap-type: y mandatory; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header flex float-right mt-16 mr-16 ">
+        <div class="a bg-gray-200 h-12 w-24  mr-5 ">1</div>
+        <div class="b bg-gray-300 h-12 w-24  mr-5 ">2</div>
+        <div class="c bg-gray-400 h-12 w-24  mr-5 ">3</div>
+        <div class="d bg-gray-500 h-12 w-24  mr-5 ">4</div>
+        <div class="bigBtn  bg-gray-700  h-12 w-32 ">5</div>
+    </div>
+
+
+    <div class="box">
+
+
+
+        <section id="1" class=" min-h-screen scroll_element  sec1" style="">
+            <div class="block w-full  text-center   ">
+                <div class="block1"></div>
+            </div>
+            <div class="content bg1 fixed">
+                <!-- <img src=""  alt=""> -->
+            </div>
+
+        </section>
+
+
+        <section id="2" class=" min-h-screen scroll_element sec2">
+            <div class="block w-full  text-center   ">
+                <div class="block2"></div>
+            </div>
+            <div class="content bg2 fixed">
+            </div>
+
+        </section>
+        <section id="3" class=" min-h-screen scroll_element sec3">
+            <div class="block w-full  text-center   ">
+                <div class="block3"></div>
+            </div>
+            <div class="content bg3 fixed">
+                <!-- <img src=""  alt=""> -->
+            </div>
+        </section>
+        <section id="4" class=" min-h-screen scroll_element sec4">
+            <div class="block w-full  text-center ">
+                <div class="block4"></div>
+            </div>
+            <div class="content bg4 fixed">
+                <!-- <img src=""  alt=""> -->
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        //get down---------------------------------------------------------
+        gsap.to(".bg1", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            // ease: CustomEase.create("custom", "M0,0 C0.69,-0.02 1,0.4 1,1"),
+            scrollTrigger: {
+                trigger: ".sec1",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+                // toggleClass:{targets:".block1",className: "frame_off",targets:".block2",className: "frame_on"}
+            },
+
+        })
+
+
+        gsap.to(".bg2", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec2",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+            }
+        })
+        gsap.to(".bg3", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec3",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+            }
+        })
+        gsap.to(".bg4", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec4",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+            }
+        })
+
+
+
+
+        // get up---------------------------------
+        gsap.from(".bg2", {
+            y: 400,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec1",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+            },
+            onComplete: () => {
+          gsap.to(".sec2", {
+            
+          })
+         
+        }
+
+        })
+
+
+
+        gsap.from(".bg3", {
+            y: 400,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec2",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+
+            }
+
+        }, )
+
+        gsap.from(".bg4", {
+            y: 400,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec3",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+
+            }
+
+        }, )
+
+
+
+        //cg bg   
+        // gsap.to(".block1", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec1",
+        //         start: "bottom center",
+        //         markers: true,
+        //         scrub: true,
+        //         // toggleClass:{targets:".sec1",className: "frame_off",targets:".sec2",className: "frame_on"}
+        //     },
+
+        // })
+
+
+
+
+        // gsap.from(".block2", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec1",
+        //         start: "bottom center",
+        //         toggleClass: {
+        //             targets: ".box",
+        //             className: "bgo",
+        //         },
+        //         markers: true,
+        //         scrub: true,
+
+        //     },
+
+        // })
+
+
+        // gsap.to(".block2", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec2",
+        //         start: "bottom center",
+        //         // toggleClass: "bgo",
+        //         markers: true,
+        //         scrub: true,
+
+        //     },
+
+        // })
+
+
+
+
+        // gsap.from(".block3", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec2",
+        //         start: "bottom center",
+        //         // toggleClass: "bgw",
+        //         markers: true,
+        //         scrub: true,
+        //         // toggleClass: "frame_on",
+        //     },
+
+        // })
+
+
+        // gsap.to(".block3", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec3",
+        //         start: "bottom center",
+        //         // toggleClass: "bgo",
+        //         markers: true,
+        //         scrub: true,
+
+        //     },
+
+        // })
+
+        // gsap.from(".block4", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec3",
+        //         start: "bottom center",
+        //         // toggleClass: "bgb",
+        //         markers: true,
+        //         scrub: true,
+        //         // toggleClass: "frame_on",
+        //     },
+
+        // })
+
+        // gsap.to(".block4", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger: ".sec4",
+        //         start: "bottom center",
+        //         // toggleClass: "bgo",
+        //         markers: true,
+        //         scrub: true,
+
+        //     },
+
+        // })
+
+
+
+
+
+
+
+
+
+        // let boxes = document.querySelectorAll("section");
+
+        // window.addEventListener("scroll", checkBoxes);
+        // checkBoxes();
+
+        // function checkBoxes() {
+
+        //     boxes.forEach((box,index) => {
+        //         let boxBottom = box.getBoundingClientRect().bottom;
+        //         let boxTop = box.getBoundingClientRect().top;
+
+        //       if(boxBottom=0){
+
+        //         box[index + 1].style.backgroundColor="rgba(254, 74, 38, 1)"
+        //       }
+
+                
+        //     });
+        // }
+    </script>
+
+
+
+
+</body>
+
+</html>
