@@ -41,6 +41,7 @@
             background-attachment: fixed;
             background-size: auto 100%;
             background-position: center;
+     
         }
 
 
@@ -51,18 +52,15 @@
             top: 10%
         }
 
-        .bg1 {
+        .square1 {
             background: url('./images/sheet1.png');
             background-repeat: no-repeat;
-            background-size: 320px 470px;
             background-position: center;
+            background-size: 320px 470px;
             z-index: 9;
-            /* margin-bottom: 20px; */
+          
         }
-
-
-
-        .bg2 {
+        .square2 {
             background: url('./images/package1.png');
             background-repeat: no-repeat;
             background-position: center;
@@ -70,7 +68,7 @@
             z-index: 9;
         }
 
-        .bg3 {
+        .square3 {
             background: url('./images/ogline1.png');
             background-repeat: no-repeat;
             background-position: center;
@@ -78,7 +76,7 @@
             z-index: 9;
         }
 
-        .bg4 {
+        .square4 {
             background: url('./images/ogline1.png');
             background-repeat: no-repeat;
             background-position: center;
@@ -86,7 +84,7 @@
             z-index: 9;
         }
 
-        .bg5 {
+        .square5 {
             background: url('./images/wline1.png');
             background-repeat: no-repeat;
             background-position: center;
@@ -98,16 +96,6 @@
             position: fixed;
             top: 20%;
         }
-
-        /* .bgk {
-            background: url('./images/visual2.jpg');
-            background-attachment: fixed;
-            background-size: auto 100%;
-            background-position: center;
-
-            transition: .5s ease-in-out;
-
-        } */
 
         .bgw {
             background-color: white;
@@ -128,85 +116,17 @@
             /* transition-property: background-color,border-color,color,fill,opacity; */
         }
 
-
-
-
-
-
-
-
-
-
-
-        .block1 {
-
+        .block1,.block2,.block3,.block4,.block5 {
             height: 100%;
-
         }
 
-        .block2 {
-            height: 100%;
-
-        }
-
-        .block3 {
-            height: 100%;
-
-        }
-
-        .block4 {
-            height: 100%;
-
-        }
-
-        .block5 {
-            height: 100%;
-
-        }
-
-        /* //////////////////////////// */
-        .change_element {
-            transition-duration: .5s;
-            transition-timing-function: ease-in-out;
-            /* transition-property: background-color,border-color,color,fill,opacity; */
-        }
-
-        /* .menu {    border-radius: 30px;
-    border-width: 2px;
-    border-style: solid;
-    display: block;
-    width: 100%;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    z-index: 400;}
 
 
 
-    .menu>div:nth-child(1) {
-    transform: translateY(-8px);
-}
-
-.menu a>div:nth-child(2) {
-    transform: translateY(-1px);}
-
-    .menu a>div:nth-child(3) {
-    transform: translateY(6px);
-}
-
-.menu div {
-    width: 26px;
-    height: 2px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: 0 0 0 -13px;
-    overflow: hidden;
-} */
 
         .fixxed {
             position: fixed;
-            opacity: 0;
+            /* opacity: 1; */
         }
 
         .backcon {
@@ -214,11 +134,12 @@
             height: 1200px;
             top: 0;
             position: relative;
+          display: flex;
 
         }
 
         .bgk {
-            background: url("https://ace-industry.co.jp/danikuru/img/visual2.jpg") repeat-x;
+            background: url("./images/visual2.jpg") repeat-x;
             background-size: auto 100%;
             background-position: fixed;
             height: 100%;
@@ -263,6 +184,7 @@
             top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
+            
         }
 
         .txt-w .jp {
@@ -273,6 +195,7 @@
             font-feature-settings: "palt";
             font-weight: 1000;
             position: absolute;
+            
 
         }
 
@@ -292,7 +215,6 @@
         }
 
         .filter {
-            /* background-color: antiquewhite; */
             background-color: #fff;
             height: 60px;
             display: inline-block;
@@ -354,8 +276,8 @@
             </a></div>
     </div> -->
 
-    <section class="box sec1">
-        <div class="backcon fixxed" style="display:flex">
+    <section class="box sec1 bgo">
+        <div class="backcon fixxed">
             <div class="bgk block1"></div>
             <div class="whiteimg"></div>
             <div class="load">
@@ -368,42 +290,42 @@
                 </div>
             </div>
 
+            <div class="content square1 fixed"></div>
         </div>
-        <div class="content bg1 fixed"></div>
     </section>
 
 
 
-    <section id="2" class=" min-h-screen scroll_element sec2 ">
+    <section id="2" class=" min-h-screen  sec2 ">
         <div class="block w-full  text-center   ">
             <div class="block2 bgk"></div>
         </div>
-        <div class="content bg2 fixed">
+        <div class="content square2 fixed">
         </div>
 
     </section>
-    <section id="3" class=" min-h-screen scroll_element sec3">
+    <section id="3" class=" min-h-screen  sec3">
         <div class="block w-full  text-center   ">
             <div class="block3 bgo"></div>
         </div>
-        <div class="content bg3 fixed">
-            <!-- <img src=""  alt=""> -->
+        <div class="content square3 fixed">
+          
         </div>
     </section>
-    <section id="4" class=" min-h-screen scroll_element sec4">
+    <section id="4" class=" min-h-screen  sec4">
         <div class="block w-full  text-center ">
             <div class="block4 bgw"></div>
         </div>
-        <div class="content bg4 fixed">
-            <!-- <img src=""  alt=""> -->
+        <div class="content square4 fixed">
+            
         </div>
     </section>
-    <section id="5" class=" min-h-screen scroll_element sec5">
+    <section id="5" class=" min-h-screen  sec5">
         <div class="block w-full  text-center ">
             <div class="block5 bgb"></div>
         </div>
-        <div class="content bg5 fixed">
-            <!-- <img src=""  alt=""> -->
+        <div class="content square5 fixed">
+        
         </div>
     </section>
 
@@ -419,54 +341,59 @@
 
 
 
-        //loading----------------------------------------------試試timeline寫法
-        gsap.to(".filter", {
+        //loading----------------------------------------------
+        const timeline = gsap.timeline()
+        timeline.to(".filter", {
             x: '1200px',
 
             duration: 1,
         })
-        gsap.to(".filter", {
+       .to(".filter", {
             y: '250px',
             x: '-730px',
 
             duration: 1,
-            delay: 1,
+            
         })
-        gsap.to(".filter", {
+        .to(".filter", {
             y: '0',
             // x:'-730px',
             duration: 1,
-            delay: 2,
+          
         })
-        gsap.to(".filter", {
+       .to(".filter", {
 
             width: '1500px',
             duration: 1,
-            delay: 3,
+          
         })
-        gsap.to(".load", {
+        .to(".load", {
             opacity: 0,
-            delay: 4,
+           
         })
-        gsap.from(".bg1", {
+       .from(".square1", {
             y: 400,
             opacity: 0,
             duration: 1,
             ease: Power4.easeInOut,
-            delay: 5
+          
         })
-        gsap.to(".whiteimg", {
+       .to(".whiteimg", {
             opacity: 0,
             duration: 1,
             ease: Power4.easeInOut,
-            delay: 5
+           
         })
 
 
+
+        
+        
+
         //get down---------------------------------------------------------
-        gsap.to(".bg1", {
+        gsap.to(".square1", {
             y: 350,
-            opacity: 0,
+            // opacity: 0,
             duration: 1,
             ease: Power4.easeInOut,
             scrollTrigger: {
@@ -479,33 +406,36 @@
                     check2()
 
                     function check2() {
-
                         var s2tp = document.querySelector('.sec2').getBoundingClientRect().top
 
 
                         if ($('.block2').hasClass('bgk') && s2tp <= 50) {
-
-                            gsap.to('.bgk', {
-                                opacity: 1,
-                            })
+                            // gsap.to('.bgk', {
+                            //     opacity: 0,
+                            // })
                             $('.block2').addClass('bgo');
                             gsap.to('.bgo', {
                                 opacity: 1,
                             })
                             $('.block2').removeClass('bgk');
-                            $('.block1').removeClass('bgk');
-                            $('.sec1').addClass('bgo');
+                            // $('.block1').removeClass('bgk');
+                            $('.block1').addClass('bgo');
 
+                        }
 
+                        if ( s2tp <= 50) {
+                            gsap.to('.bgk', {
+                                opacity: 0,
+                            })
+                            
 
                         }
 
                     }
                 },
-            },
-
+            }
         })
-        gsap.to(".bg2", {
+        gsap.to(".square2", {
             y: 350,
             opacity: 0,
             duration: 1,
@@ -524,7 +454,8 @@
                         var s3tp = document.querySelector('.sec3').getBoundingClientRect().top
 
 
-                        if (s3tp <= 50) {
+                        if ($('.block3').hasClass('bgo') && s3tp <= 50) {
+                   
                             gsap.to('.bgo', {
                                 opacity: 1,
                             })
@@ -532,6 +463,7 @@
                             gsap.to('.bgw', {
                                 opacity: 1,
                             })
+                          
                             $('.block3').removeClass('bgo');
                             $('.block2').removeClass('bgo');
                             $('.block2').addClass('bgw');
@@ -542,7 +474,7 @@
                 },
             }
         })
-        gsap.to(".bg3", {
+        gsap.to(".square3", {
             y: 350,
             opacity: 0,
             duration: 1,
@@ -579,7 +511,7 @@
                 },
             }
         })
-        gsap.to(".bg4", {
+        gsap.to(".square4", {
             y: 350,
             opacity: 0,
             duration: 1,
@@ -615,7 +547,7 @@
                 },
             }
         })
-        gsap.to(".bg5", {
+        gsap.to(".square5", {
             y: 350,
             opacity: 0,
             duration: 1,
@@ -637,7 +569,7 @@
         //2往1
 
 
-        gsap.from(".bg2", {
+        gsap.from(".square2", {
             y: 400,
             opacity: 0,
             duration: 1,
@@ -651,33 +583,9 @@
                     window.addEventListener("scroll", back2);
                     back2()
 
-
-
-
                     function back2() {
 
                         var s2bt = document.querySelector('.sec2').getBoundingClientRect().bottom
-
-                        var timeout = null;
-                        if (s2bt >= 2436) {
-                            // gsap.to('.bgo', {
-                            //     opacity: 0,
-                            //     duration: 0.2,
-                            //     ease: Power4.easeInOut,
-                            // })
-
-                            $('.backcon').addClass('fixxed')
-                            gsap.to('.fixxed', {
-                                opacity: 1,
-
-                                ease: Power4.easeInOut,
-                            })
-                            gsap.to('.bgk', {
-                                opacity: 1,
-                                duration: 0.2,
-                                ease: Power4.easeInOut,
-                            })
-                        }
 
 
                         if ($('.block2').hasClass('bgo') && s2bt >= 2436) {
@@ -685,19 +593,24 @@
                             $('.block1').addClass('bgk');
                             $('.block2').removeClass('bgo');
                             $('.block2').addClass('bgk');
+                        }
+
+                        if (s2bt >= 2436) {
+                            gsap.to('.bgk', {
+                                opacity: 1,
+                            })
+                           
 
                         }
 
                     }
                 },
 
-
             }
 
-        })
-
+        }, )
         //3往2
-        gsap.from(".bg3", {
+        gsap.from(".square3", {
             y: 400,
             opacity: 0,
             duration: 1,
@@ -730,7 +643,7 @@
             }
 
         }, )
-        gsap.from(".bg4", {
+        gsap.from(".square4", {
             y: 400,
             opacity: 0,
             duration: 1,
@@ -764,8 +677,8 @@
         }, )
 
 
-        //5往上
-        gsap.from(".bg5", {
+        //5往4
+        gsap.from(".square5", {
             y: 400,
             opacity: 0,
             duration: 1,
