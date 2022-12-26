@@ -19,5 +19,8 @@
   "homepage": "https://github.com/forget0224/industry#readme",
   "devDependencies": {
     "gh-pages": "^4.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }
