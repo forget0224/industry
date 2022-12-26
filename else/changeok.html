@@ -41,7 +41,6 @@
             background-attachment: fixed;
             background-size: auto 100%;
             background-position: center;
-     
         }
 
 
@@ -97,6 +96,16 @@
             top: 20%;
         }
 
+        /* .bgk {
+            background: url('./images/visual2.jpg');
+            background-attachment: fixed;
+            background-size: auto 100%;
+            background-position: center;
+
+            transition: .5s ease-in-out;
+
+        } */
+
         .bgw {
             background-color: white;
 
@@ -116,13 +125,81 @@
             /* transition-property: background-color,border-color,color,fill,opacity; */
         }
 
-        .block1,.block2,.block3,.block4,.block5 {
+
+
+
+
+
+
+
+
+
+
+        .block1 {
+
             height: 100%;
+
         }
 
+        .block2 {
+            height: 100%;
+
+        }
+
+        .block3 {
+            height: 100%;
+
+        }
+
+        .block4 {
+            height: 100%;
+
+        }
+
+        .block5 {
+            height: 100%;
+
+        }
+
+        /* //////////////////////////// */
+        .change_element {
+            transition-duration: .5s;
+            transition-timing-function: ease-in-out;
+            /* transition-property: background-color,border-color,color,fill,opacity; */
+        }
+
+        /* .menu {    border-radius: 30px;
+    border-width: 2px;
+    border-style: solid;
+    display: block;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    z-index: 400;}
 
 
 
+    .menu>div:nth-child(1) {
+    transform: translateY(-8px);
+}
+
+.menu a>div:nth-child(2) {
+    transform: translateY(-1px);}
+
+    .menu a>div:nth-child(3) {
+    transform: translateY(6px);
+}
+
+.menu div {
+    width: 26px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: 0 0 0 -13px;
+    overflow: hidden;
+} */
 
         .fixxed {
             position: fixed;
@@ -215,6 +292,7 @@
         }
 
         .filter {
+            /* background-color: antiquewhite; */
             background-color: #fff;
             height: 60px;
             display: inline-block;
@@ -276,7 +354,7 @@
             </a></div>
     </div> -->
 
-    <section class="box sec1 bgo">
+    <section class="box sec1">
         <div class="backcon fixxed">
             <div class="bgk block1"></div>
             <div class="whiteimg"></div>
@@ -309,7 +387,7 @@
             <div class="block3 bgo"></div>
         </div>
         <div class="content square3 fixed">
-          
+            <!-- <img src=""  alt=""> -->
         </div>
     </section>
     <section id="4" class=" min-h-screen  sec4">
@@ -317,7 +395,7 @@
             <div class="block4 bgw"></div>
         </div>
         <div class="content square4 fixed">
-            
+            <!-- <img src=""  alt=""> -->
         </div>
     </section>
     <section id="5" class=" min-h-screen  sec5">
@@ -325,7 +403,7 @@
             <div class="block5 bgb"></div>
         </div>
         <div class="content square5 fixed">
-        
+            <!-- <img src=""  alt=""> -->
         </div>
     </section>
 
@@ -341,7 +419,7 @@
 
 
 
-        //loading----------------------------------------------
+        //loading----------------------------------------------試試timeline寫法
         const timeline = gsap.timeline()
         timeline.to(".filter", {
             x: '1200px',
@@ -388,7 +466,48 @@
 
 
         
-        
+        // gsap.to(".filter", {
+        //     x: '1200px',
+
+        //     duration: 1,
+        // })
+        // gsap.to(".filter", {
+        //     y: '250px',
+        //     x: '-730px',
+
+        //     duration: 1,
+        //     delay: 1,
+        // })
+        // gsap.to(".filter", {
+        //     y: '0',
+        //     // x:'-730px',
+        //     duration: 1,
+        //     delay: 2,
+        // })
+        // gsap.to(".filter", {
+
+        //     width: '1500px',
+        //     duration: 1,
+        //     delay: 3,
+        // })
+        // gsap.to(".load", {
+        //     opacity: 0,
+        //     delay: 4,
+        // })
+        // gsap.from(".square1", {
+        //     y: 400,
+        //     opacity: 0,
+        //     duration: 1,
+        //     ease: Power4.easeInOut,
+        //     delay: 5
+        // })
+        // gsap.to(".whiteimg", {
+        //     opacity: 0,
+        //     duration: 1,
+        //     ease: Power4.easeInOut,
+        //     delay: 5
+        // })
+
 
         //get down---------------------------------------------------------
         gsap.to(".square1", {
@@ -406,28 +525,21 @@
                     check2()
 
                     function check2() {
+
                         var s2tp = document.querySelector('.sec2').getBoundingClientRect().top
 
 
                         if ($('.block2').hasClass('bgk') && s2tp <= 50) {
-                            // gsap.to('.bgk', {
-                            //     opacity: 0,
-                            // })
+                            gsap.to('.bgk', {
+                                opacity: 1,
+                            })
                             $('.block2').addClass('bgo');
                             gsap.to('.bgo', {
                                 opacity: 1,
                             })
                             $('.block2').removeClass('bgk');
-                            // $('.block1').removeClass('bgk');
+                            $('.block1').removeClass('bgk');
                             $('.block1').addClass('bgo');
-
-                        }
-
-                        if ( s2tp <= 50) {
-                            gsap.to('.bgk', {
-                                opacity: 0,
-                            })
-                            
 
                         }
 
@@ -593,13 +705,6 @@
                             $('.block1').addClass('bgk');
                             $('.block2').removeClass('bgo');
                             $('.block2').addClass('bgk');
-                        }
-
-                        if (s2bt >= 2436) {
-                            gsap.to('.bgk', {
-                                opacity: 1,
-                            })
-                           
 
                         }
 

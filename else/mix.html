@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .block {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        section {
+            height: 2000px;
+            scroll-snap-align: start;
+            width: auto;
+            /* height: 100%; */
+            text-align: center;
+            margin: 0 auto;
+            /* background: url('./images/visual2.jpg'); */
+            background-attachment: fixed;
+            background-size: auto 100%;
+            background-position: center;
+        }
+
+        .content {
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            top: 10%;
+        }
+
+        .square1 {
+            background: url("./images/sheet1.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+        .square2 {
+            background: url("./images/package1.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+        .square3 {
+            background: url("./images/ogline1.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+        .square4 {
+            background: url("./images/ogline1.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+        .square5 {
+            background: url("./images/wline1.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 320px 470px;
+            z-index: 9;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 20%;
+        }
+
+        .bgw {
+            background-color: white;
+
+            transition: 0.5s ease-in-out;
+        }
+
+        .bgo {
+            background-color: rgba(254, 74, 38, 1);
+            opacity: 1;
+            transition: 0.5s ease-in-out;
+
+            /* transition-property: background-color,border-color,color,fill,opacity; */
+        }
+
+        .bgb {
+            background-color: rgba(255, 232, 228, 1);
+            transition: 0.5s ease-in-out;
+            /* transition-property: background-color,border-color,color,fill,opacity; */
+        }
+
+        .block1,
+        .block2,
+        .block3,
+        .block4,
+        .block5 {
+            height: 100%;
+        }
+
+        .fixxed {
+            position: fixed;
+            /* opacity: 1; */
+        }
+
+        .backcon {
+            overflow: hidden;
+            height: 1200px;
+            top: 0;
+            position: relative;
+            display: flex;
+        }
+
+        .bgk {
+            background: url("./images/visual2.jpg") repeat-x;
+            background-size: auto 100%;
+            background-position: fixed;
+            height: 100%;
+            width: 8500px;
+            animation: slide 200s linear infinite;
+            position: fixed;
+        }
+
+        .whiteimg {
+            background: url("./images/visual1.jpg");
+            height: 80%;
+            width: 2000px;
+            background-size: auto 100%;
+            position: absolute;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translate(-1610px);
+            }
+
+            100% {
+                transform: translate(-3840px);
+                /* The image width */
+            }
+        }
+
+        .load {
+            max-height: 100%;
+            min-width: 100%;
+            position: relative;
+            background-color: white;
+        }
+
+        .txt-w {
+            display: flex;
+            min-width: 730px;
+            height: 60px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .txt-w .jp {
+            width: 730px;
+            font-family: "Gothic MB101 Bold", sans-serif;
+            font-size: 60px;
+            line-height: 60px;
+            font-feature-settings: "palt";
+            font-weight: 1000;
+            position: absolute;
+        }
+
+        .load_icon {
+            position: absolute;
+            bottom: 28%;
+            right: 60px;
+            text-align: right;
+        }
+
+        .load_icon p {
+            font-size: 16px;
+            line-height: 16px;
+            font-family: Oswald, sans-serif;
+            width: 60px;
+        }
+
+        .filter {
+            background-color: #fff;
+            height: 60px;
+            display: inline-block;
+            width: 730px;
+            position: absolute;
+        }
+
+        .load_icon p>span:nth-child(1) {
+            animation: load_blink1 0.5s ease-in-out infinite;
+        }
+
+        .load_icon p>span:nth-child(2) {
+            animation: load_blink1 0.5s ease-in-out 50ms infinite;
+        }
+
+        .load_icon p>span:nth-child(3) {
+            animation: load_blink1 0.5s ease-in-out 0.1s infinite;
+        }
+
+        @keyframes load_blink1 {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="header1 flex float-right mt-16 mr-16 ">
+        <div class="a bg-gray-200 h-12 w-24  mr-5 ">1</div>
+        <div class="b bg-gray-300 h-12 w-24  mr-5 ">2</div>
+        <div class="c bg-gray-400 h-12 w-24  mr-5 ">3</div>
+        <div class="d bg-gray-500 h-12 w-24  mr-5 ">4</div>
+        <div class="bigBtn  bg-gray-700  h-12 w-32 ">5</div>
+    </div> -->
+    <!-- <div class="header2 flex float-right mt-16 mr-16 ">
+        <div class="a bg-gray-200 h-12 w-24  mr-5 ">お問い合わせ</div>
+        <div class="bigBtn    h-12 w-32 menu">
+            <a href="javascript:void(0);" class="" style="    width: 60px;
+            height: 60px;
+            margin: 0 0 0 30px;
+            overflow: visible;
+            user-select: auto;
+            pointer-events: auto;">
+                <div><span><span class=""></span></span></div>
+                <div><span><span class=""></span></span></div>
+                <div><span><span class=""></span></span></div>
+            </a></div>
+    </div> -->
+
+    <section class="box sec1 bgo">
+        <div class="backcon fixxed">
+            <div class="bgk block1"></div>
+            <!-- <div class="whiteimg"></div>
+            <div class="load">
+                <div class="txt-w">
+                    <div class="jp">その寝袋、<span style="color: rgba(254,74,38,1);">ダニ</span>がいるかも。</div>
+                    <div class="filter"></div>
+                </div>
+                <div class="load_icon">
+                    <p>LOADING<span>.</span><span>.</span><span>.</span></p>
+                </div>
+            </div> -->
+
+            <div class="content square1 fixed"></div>
+        </div>
+    </section>
+
+    <section id="2" class="min-h-screen sec2 bgw">
+        <div class="block w-full text-center bgo">
+            <div class="block2"></div>
+        </div>
+        <div class="content square2 fixed"></div>
+    </section>
+    <section id="3" class="min-h-screen sec3 bgb">
+        <div class="block w-full text-center bgw">
+            <div class="block3 bgo"></div>
+        </div>
+        <div class="content square3 fixed"></div>
+    </section>
+    <section id="4" class="min-h-screen sec4 bgo">
+        <div class="block w-full text-center bgb">
+            <div class="block4 bgw"></div>
+        </div>
+        <div class="content square4 fixed"></div>
+    </section>
+    <section id="5" class="min-h-screen sec5">
+        <div class="block w-full text-center bgo">
+            <div class="block5 bgb"></div>
+        </div>
+        <div class="content square5 fixed"></div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        //loading----------------------------------------------
+        //   const timeline = gsap.timeline();
+        //   timeline
+        //     .to(".filter", {
+        //       x: "1200px",
+
+        //       duration: 1,
+        //     })
+        //     .to(".filter", {
+        //       y: "250px",
+        //       x: "-730px",
+
+        //       duration: 1,
+        //     })
+        //     .to(".filter", {
+        //       y: "0",
+        //       // x:'-730px',
+        //       duration: 1,
+        //     })
+        //     .to(".filter", {
+        //       width: "1500px",
+        //       duration: 1,
+        //     })
+        //     .to(".load", {
+        //       opacity: 0,
+        //     })
+
+        //     .to(".whiteimg", {
+        //       opacity: 0,
+        //       duration: 1,
+        //       ease: Power4.easeInOut,
+        //     });
+
+        //get down---------------------------------------------------------
+        gsap.from(".square1", {
+            y: 400,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            delay: 5,
+            onComplete: () => {
+                gsap.to(".square1", {
+                    y: 350,
+                    opacity: 0,
+                    duration: 1,
+                    ease: Power4.easeInOut,
+                    scrollTrigger: {
+                        trigger: ".sec1",
+                        start: "bottom center",
+                        markers: true,
+                        scrub: true,
+                        end: "bottom top",
+                    },
+                    onComplete: () => {
+                        gsap.to(".sec1 .bgk", {
+                            opacity: 0,
+                            onComplete: () => {
+                                gsap.from(".square2", {
+                                    y: 400,
+                                    opacity: 0,
+                                    duration: 1,
+                                    ease: Power4.easeInOut,
+                                    scrollTrigger: {
+                                        trigger: ".sec1",
+                                        start: "bottom center",
+                                        markers: true,
+                                        scrub: true,
+                                        end: "bottom top",
+                                    },
+                                    onComplete: () => {
+                                        gsap.to(".sec1 .bgk", {
+                                            opacity: 1
+                                        });
+                                    },
+                                });
+                            },
+                        });
+                    },
+                });
+            },
+        });
+
+        //   --------------------------------
+
+        gsap.to(".square2", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec2",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+                end: "bottom top",
+            },
+            onComplete: () => {
+                gsap.to(".sec3 .bgo,.sec2 .bgo", {
+                    opacity: 0,
+                    function() {
+                        console.log('上一個色移除')
+                    },
+                    
+                    onComplete: () => {
+                        gsap.from(".square3", {
+                            y: 400,
+                            opacity: 0,
+                            duration: 1,
+                            ease: Power4.easeInOut,
+                            scrollTrigger: {
+                                trigger: ".sec2",
+                                start: "bottom center",
+                                markers: true,
+                                scrub: true,
+                                end: "bottom top",
+                            },
+                            function() {
+                        console.log('執行sq3往上')
+                    },
+                            onComplete: () => {
+                                gsap.to(".sec3 .bgo,.sec2 .bgo", {
+                                    opacity: 1,
+                                    function() {
+                        console.log('背景色回來')
+                    },
+                                });
+                            },
+                        });
+                    },
+                });
+            },
+        });
+
+        // --------------------------------------------------
+        gsap.to(".square3", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec3",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+                end: "bottom top",
+            },
+            onComplete: () => {
+                gsap.to(".sec4 .bgw,.sec3 .bgw", {
+                    opacity: 0,
+                    onComplete: () => {
+                        gsap.from(".square4", {
+                            y: 400,
+                            opacity: 0,
+                            duration: 1,
+                            ease: Power4.easeInOut,
+                            scrollTrigger: {
+                                trigger: ".sec3",
+                                start: "bottom center",
+                                markers: true,
+                                scrub: true,
+                                end: "bottom top",
+                            },
+                            onComplete: () => {
+                                gsap.to(".sec4 .bgw,.sec3 .bgw", {
+                                    opacity: 1
+                                });
+                            },
+                        });
+                    },
+                });
+            },
+        });
+
+        //   ------------------------------------------
+        gsap.to(".square4", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            scrollTrigger: {
+                trigger: ".sec4",
+                start: "bottom center",
+                markers: true,
+                scrub: true,
+                end: "bottom top",
+            },
+            onComplete: () => {
+                gsap.from(".square5", {
+                    y: 400,
+                    opacity: 0,
+                    duration: 1,
+                    ease: Power4.easeInOut,
+                    scrollTrigger: {
+                        trigger: ".sec4",
+                        start: "bottom center",
+                        markers: true,
+                        scrub: true,
+                        end: "bottom top",
+                    },
+                    onComplete: () => {
+                        gsap.to(".sec4 .bgb,.sec5 .bgb", {
+                            opacity: 1
+                        });
+                    },
+                });
+            },
+        });
+        //   gsap.to(".square5", {
+        //     y: 350,
+        //     opacity: 0,
+        //     duration: 1,
+        //     ease: Power4.easeInOut,
+        //     scrollTrigger: {
+        //       trigger: ".sec5",
+        //       start: "bottom center",
+        //       markers: true,
+        //       scrub: true,
+        //       end: "bottom top",
+        //     },
+        //   });
+
+        // get up---------------------------------
+
+        gsap.to(".sec1 .bgk", {
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+                trigger: ".sec2",
+                start: "top center",
+                markers: true,
+                scrub: true,
+                end: "top bottom ",
+            },
+        });
+
+        //2往1
+
+        //   gsap.from(".square2", {
+        //     y: 400,
+        //     opacity: 0,
+        //     duration: 1,
+        //     ease: Power4.easeInOut,
+        //     scrollTrigger: {
+        //       trigger: ".sec1",
+        //       start: "bottom center",
+        //       markers: true,
+        //       scrub: true,
+        //       end: "bottom top",
+        //     },
+        //   });
+        //3往2
+        //   gsap.from(".square3", {
+        //     y: 400,
+        //     opacity: 0,
+        //     duration: 1,
+        //     ease: Power4.easeInOut,
+        //     scrollTrigger: {
+        //       trigger: ".sec2",
+        //       start: "bottom center",
+        //       markers: true,
+        //       scrub: true,
+        //       end: "bottom top",
+        //     },
+        //   });
+        //   gsap.from(".square4", {
+        //     y: 400,
+        //     opacity: 0,
+        //     duration: 1,
+        //     ease: Power4.easeInOut,
+        //     scrollTrigger: {
+        //       trigger: ".sec3",
+        //       start: "bottom center",
+        //       markers: true,
+        //       scrub: true,
+        //       end: "bottom top",
+        //     },
+        //     onComplete: () => {
+        //     gsap.to(".sec4 .bgw,.sec3 .bgw", { opacity: 1 });
+        //   },
+        //   });
+
+        //5往4
+        //   gsap.from(".square5", {
+        //     y: 400,
+        //     opacity: 0,
+        //     duration: 1,
+        //     ease: Power4.easeInOut,
+        //     scrollTrigger: {
+        //       trigger: ".sec4",
+        //       start: "bottom center",
+        //       markers: true,
+        //       scrub: true,
+        //       end: "bottom top",
+        //     },
+        // onComplete: () => {
+        //   gsap.to(".sec4 .bgb,.sec5 .bgb", { opacity: 1 });
+        // },
+        //   });
+    </script>
+</body>
+
+</html>
