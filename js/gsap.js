@@ -1,239 +1,242 @@
 gsap.registerPlugin(ScrollTrigger);
 
 //loading----------------------------------------------
-const timeline = gsap.timeline();
-timeline
-    .to(".loading__block--filter", {
-        x: "1200px",
 
-        duration: 1,
-    })
-    .to(".loading__block--filter", {
-        y: "250px",
-        x: "-730px",
+function loading() {
+    const loadtl = gsap.timeline();
+    loadtl
+        .to(".loading__block--filter", {
+            x: "1200px",
 
-        duration: 1,
-    })
-    .to(".loading__block--filter", {
-        y: "0",
-        // x:'-730px',
-        duration: 1,
-    })
-    .to(".loading__block--filter", {
-        width: "1500px",
-        duration: 1,
-    })
-    .to(".loading", {
-        opacity: 0,
-    })
+            duration: 1,
+        })
+        .to(".loading__block--filter", {
+            y: "250px",
+            x: "-730px",
 
-    // --------------------------------------------------1
-    .from(".square1", {
-        y: 400,
-        opacity: 0,
-        duration: 1,
-        ease: Power4.easeInOut,
-        delay: 5,
-        onComplete: () => {
-            gsap.to(".square1", {
-                y: 350,
-                opacity: 0,
-                duration: 1,
-                ease: Power4.easeInOut,
-                scrollTrigger: {
-                    trigger: ".section1",
-                    start: "bottom center",
-                    markers: true,
-                    scrub: true,
-                    end: "bottom top",
-                },
-                onComplete: () => {
-                    gsap.to(".section1 .background--dark", {
-                        opacity: 0,
-                        scrollTrigger: {
-                            trigger: ".section1",
-                            start: "bottom center",
-                            markers: true,
-                            scrub: true,
-                            end: "bottom top",
-                        },
-                    });
-                },
-            });
-        },
-    })
-    .to(".background--light", {
-        opacity: 0,
-        duration: 1,
-        ease: Power4.easeInOut,
-    })
+            duration: 1,
+        })
+        .to(".loading__block--filter", {
+            y: "0",
+            // x:'-730px',
+            duration: 1,
+        })
+        .to(".loading__block--filter", {
+            width: "1500px",
+            duration: 1,
+        })
+        .to(".loading", {
+            opacity: 0,
+        })
+        .from(".square1", {
+            y: 400,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+            onComplete: sec1(),
+        })
+        .to(".background--light", {
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+        });
+    return loadtl;
+}
 
-    // --------------------------------------------------2
-    .from(".square2", {
-        y: 400,
-        opacity: 0,
-        duration: 1,
-        ease: Power4.easeInOut,
+// --------------------------------------------------1
+
+function sec1() {
+    const sq1tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".section1",
             start: "bottom center",
+            end: "bottom center",
             markers: true,
-            scrub: true,
-            end: "bottom top",
+            toggleActions: "play none reverse none",
         },
-        onComplete: () => {
-            gsap.to(".square2", {
-                y: 350,
+    });
+    sq1tl
+        .to(".square1", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+        })
+        .from(
+            ".square2", {
+                y: 400,
                 opacity: 0,
                 duration: 1,
                 ease: Power4.easeInOut,
-                scrollTrigger: {
-                    trigger: ".section2",
-                    start: "bottom center",
-                    markers: true,
-                    scrub: true,
-                    end: "bottom top",
-                },
-                onComplete: () => {
-                    gsap.to(
-                        ".section3 .background--orange,.section2 .background--orange", {
-                            opacity: 0,
+                onComplete: sec2(),
+            },
+            "-=1"
+        )
+        .to(
+            ".section1 .background--dark", {
+                opacity: 0,
+            },
+            "-=0.5"
+        );
 
-                            scrollTrigger: {
-                                trigger: ".section2",
-                                start: "bottom top",
-                                markers: true,
-                                scrub: true,
-                            },
-                        }
-                    );
-                },
-            });
-        },
-    })
+    return sq1tl;
+}
 
-    // --------------------------------------------------3
-    .from(".square3", {
-        y: 400,
-        opacity: 0,
-        duration: 1,
-        ease: Power4.easeInOut,
+// --------------------------------------------------2
+function sec2() {
+    const sq2tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".section2",
             start: "bottom center",
+            end: "bottom center",
             markers: true,
-            scrub: true,
-            end: "bottom top",
+            toggleActions: "play none reverse none",
         },
-        onComplete: () => {
-            gsap.to(".square3", {
-                y: 350,
+    });
+    sq2tl
+        .to(".square2", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+        })
+        .from(
+            ".square3", {
+                y: 400,
                 opacity: 0,
                 duration: 1,
                 ease: Power4.easeInOut,
-                scrollTrigger: {
-                    trigger: ".section3",
-                    start: "bottom center",
-                    markers: true,
-                    scrub: true,
-                    end: "bottom top",
-                },
-                onComplete: () => {
-                    gsap.to(".section4 .background--white,.section3 .background--white", {
-                        opacity: 0,
-                        scrollTrigger: {
-                            trigger: ".section3",
-                            start: "bottom center",
-                            markers: true,
-                            scrub: true,
-                            end: "bottom top",
-                        },
-                    });
-                },
-            });
-        },
-    })
+                onComplete: sec3(),
+            },
+            "-=1"
+        )
+        .to(
+            ".section3 .background--orange,.section2 .background--orange", {
+                opacity: 0,
+            },
+            "-=0.5"
+        );
+    return sq2tl;
+}
 
-    // --------------------------------------------------4
-    .from(".square4", {
-        y: 400,
-        opacity: 0,
-        duration: 1,
-        ease: Power4.easeInOut,
+// --------------------------------------------------3
+function sec3() {
+    const sq3tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".section3",
             start: "bottom center",
+            end: "bottom center",
             markers: true,
-            scrub: true,
-            end: "bottom top",
+
+            toggleActions: "play none reverse none",
         },
-        onComplete: () => {
-            gsap.to(".square4", {
-                y: 350,
+    });
+    sq3tl
+        .to(".square3", {
+            y: 350,
+            opacity: 0,
+            duration: 1,
+            ease: Power4.easeInOut,
+        })
+        .from(
+            ".square4", {
+                y: 400,
                 opacity: 0,
                 duration: 1,
                 ease: Power4.easeInOut,
-                scrollTrigger: {
-                    trigger: ".section4",
-                    start: "bottom center",
-                    markers: true,
-                    scrub: true,
-                    end: "bottom top",
-                },
-                onComplete: () => {
-                    gsap.to(".section4 .background--beige,.section5 .background--beige", {
-                        opacity: 0,
-                        scrollTrigger: {
-                            trigger: ".section4",
-                            start: "bottom center",
-                            markers: true,
-                            scrub: true,
-                            end: "bottom top",
-                        },
-                    });
-                },
-            });
-        },
-    })
+                onComplete: sec4(),
+            },
+            "-=1"
+        )
+        .to(
+            ".section4 .background--white,.section3 .background--white", {
+                opacity: 0,
+            },
+            "-=0.5"
+        );
 
-    // --------------------------------------------------5
-    .from(".square5", {
-        y: 400,
-        opacity: 0,
-        duration: 1,
-        ease: Power4.easeInOut,
+    return sq3tl;
+}
+
+// --------------------------------------------------4
+
+function sec4() {
+    const sq4tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".section4",
             start: "bottom center",
+            end: "bottom center",
             markers: true,
-            scrub: true,
-            end: "bottom top",
+
+            toggleActions: "play none reverse none",
         },
-        onComplete: () => {
-            gsap.to(".square5", {
+    });
+    sq4tl
+
+        .to(
+            ".square4", {
                 y: 350,
                 opacity: 0,
                 duration: 1,
                 ease: Power4.easeInOut,
-                scrollTrigger: {
-                    trigger: ".section5",
-                    start: "bottom center",
-                    markers: true,
-                    scrub: true,
-                    end: "bottom top",
-                },
-                onComplete: () => {
-                    gsap.to(".section4 .background--beige,.section5 .background--beige", {
-                        opacity: 1,
-                        scrollTrigger: {
-                            trigger: ".section5",
-                            start: "bottom center",
-                            markers: true,
-                            scrub: true,
-                            end: "bottom top",
-                        },
-                    });
-                },
-            });
-        },
-    });
+            },
+            "-=1"
+        )
+
+        .from(
+            ".square5", {
+                y: 400,
+                opacity: 0,
+                duration: 1,
+                // onComplete: sec5(),
+            },
+            "-=1"
+        )
+
+        .to(
+            ".section4 .background--beige,.section5 .background--beige", {
+                opacity: 0,
+            },
+            "-=0.5"
+        );
+    return sq4tl;
+}
+
+// --------------------------------------------------5
+// function sec5() {
+//   const sq5tl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".section5",
+//       start: "bottom center",
+//      end: "bottom center",
+//       markers: true,
+
+//       toggleActions: "play none reverse none",
+//     },
+//   });
+//   sq5tl
+
+//     .to(
+//       ".square5",
+//       {
+//         y: 350,
+//         opacity: 0,
+//         duration: 1,
+//         ease: Power4.easeInOut,
+//       },
+//       "-=1"
+//     )
+//     .to(
+//       ".section4 .background--beige,.section5 .background--beige",
+//       {
+//         opacity: 0,
+//       },
+//       "-=0.5"
+//     );
+
+//   return sq5tl;
+// }
+
+var master = gsap.timeline();
+master.add(loading());
+// .add(sec1()).add(sec2()).add(sec3());
