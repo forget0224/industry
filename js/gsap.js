@@ -51,7 +51,7 @@ function sec1() {
             trigger: ".section1",
             start: "bottom center",
             end: "bottom center",
-            markers: true,
+            // markers: true,
             toggleActions: "play none reverse none",
         },
     });
@@ -89,7 +89,7 @@ function sec2() {
             trigger: ".section2",
             start: "bottom center",
             end: "bottom center",
-            markers: true,
+            // markers: true,
             toggleActions: "play none reverse none",
         },
     });
@@ -126,7 +126,7 @@ function sec3() {
             trigger: ".section3",
             start: "bottom center",
             end: "bottom center",
-            markers: true,
+            // markers: true,
 
             toggleActions: "play none reverse none",
         },
@@ -166,7 +166,7 @@ function sec4() {
             trigger: ".section4",
             start: "bottom center",
             end: "bottom center",
-            markers: true,
+            // markers: true,
 
             toggleActions: "play none reverse none",
         },
@@ -209,7 +209,7 @@ function sec4() {
 //       trigger: ".section5",
 //       start: "bottom center",
 //      end: "bottom center",
-//       markers: true,
+    //   markers: true,
 
 //       toggleActions: "play none reverse none",
 //     },
