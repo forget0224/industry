@@ -1,16 +1,24 @@
-# industry
-檔案:timeline.html<br>
-分支:gh-pages<br>
-頁面:https://forget0224.github.io/industry/timeline.html <br>
+# GSAP 練習專案
 
-- [x] 上下滑動切換背景及區塊改用timeline寫法。
-- [x] BEM命名，不確定規則是否正確且方便到只看過幾次的人。
-- [x] 一頁不超過200行，內容盡量都分出去。
-- [x] npm install normalize.css。 
-- [ ] 往下滾第一次切換成橘色背景會直接完成，但往上跟再往下都正常有動畫。
-- [ ] 原版頁面切換動畫為:滾到某個點觸發切換動畫，觸發後會自己完成後面的切換背景色，不像我做的動畫是在滾動的區間內執行。
-<br>`目前修改方向為:1.改用fromTo，2.scrolltrigger的 start end 做調整`
-- [ ] loading_dot改用gsap寫。
-- [ ] 網頁裡的內文放置。
-- [ ] 挑戰加入nav並做滾動變化。
-<br>**感謝您!**
+使用 GSAP 進行頁面切換效果模仿的練習專案，目標是模仿 [ACE Industry 的頁面切換效果](https://ace-industry.co.jp/danikuru/)。
+
+## 專案背景
+
+練習使用 GSAP 來實現動畫效果。專案中模仿了 ACE Industry 網頁的頁面切換效果，以達到學習和提升 GSAP 使用技巧的目的。
+
+## 使用技術
+
+- **動畫庫**：GSAP (GreenSock Animation Platform)
+- **前端框架**：純 HTML/CSS/JavaScript
+
+## 功能
+
+- **頁面切換效果**：模仿 ACE Industry 網頁的流暢頁面切換效果。
+- **動畫控制**：利用 GSAP 控制各種動畫效果，包括進場、退場等。
+
+## 專案連結
+
+你可以在這裡查看並使用此專案：[GSAP 練習專案](https://industry.pages.dev/)
+
+
+
